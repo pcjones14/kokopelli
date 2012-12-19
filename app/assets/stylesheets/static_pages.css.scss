@@ -88,12 +88,14 @@ html {
 	height: 103px;
 	width: 250px;
 	float: left;
+	background-color: #ABF;
 }
 
 nav.primary {
 	height: 103px;
 	width: 710px;
 	margin-left: 250px;
+	background-color: #ABE;
 }
 
 .header_bar2 {
@@ -104,12 +106,14 @@ nav.primary {
 	height: 180px;
 	width: 630px;
 	float: left;
+	background-color: #ABD;
 }
 
 .welcome {
 	height: 180px;
 	width: 330px;
 	margin-left: 630px;
+	background-color: #ABC;
 }
 
 /* index_bar CSS */
@@ -119,19 +123,60 @@ nav.primary {
 }
 
 nav.secondary {
-	height: 210px;
+	height: 200px;
 	width: 300px;
+	margin: 5px 0;
 	float: left;
+	background-color: #ABB;
 }
 
 .video {
-	height: 210px;
-	width: 380px;
+	height: 200px;
+	width: 370px;
+	margin: 5px;
 	float: left;
+	background-color: #ABA;
 }
 
 .info {
-	height: 210px;
+	height: 200px;
 	width: 280px;
-	margin-left: 680px;
+	margin: 5px 0;
+	float: right;
+	background-color: #AB9;
+}
+
+/* main CSS */
+
+.news {
+	min-height: 500px;
+	width: 300px;
+	float: left;
+	background-color: #AB8;
+}
+
+.content {
+	min-height: 500px;
+	margin-left: 305px;
+	background-color: #AB7;
+}
+
+/* footer CSS */
+
+footer {
+	margin-top: 5px;
+}
+
+.footer_box {
+	height: 237px;
+	width: 237px;
+	float: left;
+	background-color: #AB6;
+	margin-right: 4px;
+}
+
+.footer_box:last-child {
+	float: none;
+	margin-left: 723px;
+	margin-right: 0;
 }
