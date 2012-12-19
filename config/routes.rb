@@ -1,5 +1,6 @@
 Family::Application.routes.draw do
   get "static_pages/index"
+  get "static_pages/article"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
