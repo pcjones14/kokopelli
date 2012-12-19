@@ -77,3 +77,61 @@ html {
 	width: 960px;
 	margin: 0 auto;
 }
+
+/* header CSS */
+
+.header_bar1 {
+	height: 103px;
+}
+
+.logo {
+	height: 103px;
+	width: 250px;
+	float: left;
+}
+
+nav.primary {
+	height: 103px;
+	width: 710px;
+	margin-left: 250px;
+}
+
+.header_bar2 {
+	height: 180px;
+}
+
+.banner {
+	height: 180px;
+	width: 630px;
+	float: left;
+}
+
+.welcome {
+	height: 180px;
+	width: 330px;
+	margin-left: 630px;
+}
+
+/* index_bar CSS */
+
+.index_bar {
+	height: 210px;
+}
+
+nav.secondary {
+	height: 210px;
+	width: 300px;
+	float: left;
+}
+
+.video {
+	height: 210px;
+	width: 380px;
+	float: left;
+}
+
+.info {
+	height: 210px;
+	width: 280px;
+	margin-left: 680px;
+}
