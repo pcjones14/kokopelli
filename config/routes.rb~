@@ -3,8 +3,6 @@ Family::Application.routes.draw do
   get "static_pages/index"
   get "static_pages/article"
   get "static_pages/clinic_information"
-  get "static_pages/providers"
-  get "static_pages/staff"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

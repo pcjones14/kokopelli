@@ -113,6 +113,18 @@ nav.primary {
 	background-color: #ABE;
 }
 
+nav.primary ul {
+  margin: 0;
+}
+
+nav.primary li {
+  float: left;
+}
+
+nav.primary li ul {
+  float: left;
+}
+
 .header_bar2 {
 	height: 270px;
 }

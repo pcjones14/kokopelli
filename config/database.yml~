@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: family-development
+  database: pg_development
   pool: 5
   username: payton
 

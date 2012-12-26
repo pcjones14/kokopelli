@@ -20,7 +20,6 @@
 						<ul>
 						  <li><%= link_to("Clinic Information", static_pages_clinic_information_path) %></li>
 						  <li><%= link_to("Our Providers", static_pages_providers_path) %></li>
-						  <li><%= link_to("Our Staff", static_pages_staff_path) %></li>
 						</ul></li>
 						<li><a href="#">three</a></li>
 						<li><a href="#">four</a></li>
