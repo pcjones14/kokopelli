@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="article">
+
+    <h2 style="margin-bottom:0;"><%= @article.title %></h2>
+    <p style="margin-top:0;"><i><%= "#{@article.updated_at}"[0...-4] %></i>
+
+    <%= "#{@article.body}".html_safe %>
+
+    <p><i>Tags: <%= @article.tags %></i></p>
+
+  </div>
+</div>

@@ -15,4 +15,16 @@ class StaticPagesController < ApplicationController
   def staff
   end
 
+  def privacy_practice
+  end
+
+  def privacy_policy
+  end
+
+  def terms_of_use
+  end
+
+  def disclaimer
+  end
+
 end

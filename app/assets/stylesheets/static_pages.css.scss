@@ -2,6 +2,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=Rambla);
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
 /* default HTML4 CSS */
 
@@ -85,12 +86,16 @@ BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
 /* site-wide CSS */
 
 html {
-	font-family: "Titillium Web", sans-serif;
+	font-family: "Source Sans Pro", sans-serif;
 }
 
 .container {
 	width: 960px;
 	margin: 0 auto;
+}
+
+h1, h2 {
+	margin-top: 0;
 }
 
 /* header CSS */
@@ -186,6 +191,11 @@ nav.secondary {
 
 footer {
 	margin-top: 5px;
+	font-size: .85em;
+}
+
+footer p {
+	margin-top: 0;
 }
 
 .footer_box {

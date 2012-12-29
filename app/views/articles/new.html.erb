@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="article">
+
+    <h2>Create New Article</h2>
+
+    <%= form_tag({controller: "articles"}, {method: "post"}) do %>
+      <p>Title:<br/>
+        <%= text_field_tag(:title) %></p>
+      <p>Body:<br/>
+        <%= text_area_tag(:body, nil, rows: 20, cols: 80) %></p>
+      <p>Tags:<br/>
+        <%= text_field_tag(:tags) %></p>
+      <p>Visible:<br/>
+        Yes <%= radio_button_tag(:visible, true, "checked") %> No <%= radio_button_tag(:visible, false) %></p>
+      <p><%= submit_tag %></p>
+    <% end %>
+
+  </div>
+</div>

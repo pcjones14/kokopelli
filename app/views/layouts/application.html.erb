@@ -22,8 +22,18 @@
 						  <li><%= link_to("Our Providers", static_pages_providers_path) %></li>
 						  <li><%= link_to("Our Staff", static_pages_staff_path) %></li>
 						</ul></li>
-						<li><a href="#">three</a></li>
-						<li><a href="#">four</a></li>
+						<li><%= link_to("News", articles_path) %>
+							<ul>
+								<li><%= link_to("New Article", new_article_path) %></li>
+							</ul>
+						</li>
+						<li>Tools
+							<ul>
+								<li><%= link_to("Make a Payment", "https://secure.modpay.com/vterm/vterm1.cfm?an&ae=1&clientcode=33987ED0") %></li>
+								<li><%= link_to("Request Medical Records", "http://www.centralutahclinic.com/patient-resources/request-medical-records") %></li>
+								<li><%= link_to("Central Utah Clinic Website", "http://www.centralutahclinic.com/") %></li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -38,8 +48,14 @@
 		<footer>
 			<div class="footer_box">footer1</div>
 			<div class="footer_box">footer2</div>
-			<div class="footer_box">footer3</div>
-			<div class="footer_box">footer4</div>
+			<div class="footer_box">
+				<p><b>Legal</b></p>
+				<p><%= link_to("Privacy Practice", static_pages_privacy_practice_path) %></p>
+				<p><%= link_to("Privacy Policy", static_pages_privacy_policy_path) %></p>
+				<p><%= link_to("Terms of Use", static_pages_terms_of_use_path) %></p>
+				<p><%= link_to("Disclaimer", static_pages_disclaimer_path) %></p>
+			</div>
+			<div class="footer_box"><p>Services provided in partership with<%= image_tag("central_utah_clinic_logo.gif", width: 200) %></p></div>
 		</footer>
 
 	</div>
