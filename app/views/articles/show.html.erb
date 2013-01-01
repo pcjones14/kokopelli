@@ -6,7 +6,7 @@
 
     <%= "#{@article.body}".html_safe %>
 
-    <p><i>Tags: <%= @article.tags %></i></p>
+    <p><i>Keywords: <%= @article.tags %></i></p>
 
     <p><i><%= link_to("Edit", edit_article_path(@article.id)) %></i> | <i><%= link_to("Delete", article_path, method: "delete") %></i></p>
 

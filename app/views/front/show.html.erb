@@ -1,2 +1,16 @@
-<h1>Front#show</h1>
-<p>Find me in app/views/front/show.html.erb</p>
+<% tag_string = "" %>
+<% @tags.each {|tag| tag_string += link_to(tag, front_search_path(keyword: tag)) + ", "} %>
+<% tag_string = tag_string[0...-2] %>
+
+<div class="main">
+  <div class="article">
+
+    <h2 style="margin-bottom:0;"><%= @article.title %></h2>
+    <p style="margin-top:0;"><i><%= "#{@article.updated_at}"[0...-4] %></i>
+
+    <%= "#{@article.body}".html_safe %>
+
+    <p><i>Keywords: <%= "#{tag_string}".html_safe %></i></p>
+
+  </div>
+</div>

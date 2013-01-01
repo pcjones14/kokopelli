@@ -1,2 +1,17 @@
-<h1>Front#search</h1>
-<p>Find me in app/views/front/search.html.erb</p>
+<div class="main">
+  <div class="article">
+
+    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+
+    <h1>Listing articles with keyword "<%= params[:keyword] %>"</h1>
+
+    <% @articles.each do |article| %>
+      <% if article.visible %>
+        <h2><%= link_to(article.title, front_show_path(id: article.id)) %></h2>
+        <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, front_show_path(id: article.id)) %>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>

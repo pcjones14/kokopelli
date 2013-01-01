@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="article">
+
+    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+
+    <%= form_tag do %>
+      <h2>Login to the backend of the site:</h2>
+      <p>Email: <br/>
+        <%= text_field_tag(:email) %></p>
+      <p>Password: <br/>
+        <%= password_field_tag(:password) %></p>
+      <p><%= submit_tag("Login") %></p>
+    <% end %>
+
+  </div>
+</div>

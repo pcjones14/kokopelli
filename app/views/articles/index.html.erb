@@ -8,7 +8,7 @@
 
     <% @articles.each do |article| %>
       <h2><%= link_to(article.title, article_path(article.id)) %><%= " <i>(hidden)</i>".html_safe if article.visible == "false" or not article.visible %></h2>
-      <%= "#{article.body}".html_safe %>
+      <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more", article_path(article.id)) %>
     <% end %>
 
   </div>

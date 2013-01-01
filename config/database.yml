@@ -1,9 +1,9 @@
-#development:
-#  adapter: postgresql
-#  encoding: unicode
-#  database: family-development
-#  pool: 5
-#  username: payton
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: family-development
+  pool: 5
+  username: payton
 
 test:
   adapter: postgresql
@@ -12,7 +12,7 @@ test:
   pool: 5
   username: payton
 
-development:
+production:
   adapter: sqlite3
   database: db/production.sqlite3
   pool: 5

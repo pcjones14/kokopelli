@@ -11,7 +11,7 @@
         <%= text_field_tag(:title) %></p>
       <p>Body:<br/>
         <%= text_area_tag(:body, nil, rows: 20, cols: 80) %></p>
-      <p>Tags:<br/>
+      <p>Keywords <i>(separate with commas)</i>:<br/>
         <%= text_field_tag(:tags) %></p>
       <p>Visible:<br/>
         Yes <%= radio_button_tag(:visible, true, "checked") %> No <%= radio_button_tag(:visible, false) %></p>

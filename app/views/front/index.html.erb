@@ -9,7 +9,7 @@
     <% @articles.each do |article| %>
       <% if article.visible %>
         <h2><%= link_to(article.title, front_show_path(id: article.id)) %></h2>
-        <%= "#{article.body}".html_safe %>
+        <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, front_show_path(id: article.id)) %>
       <% end %>
     <% end %>
 

@@ -1,12 +1,11 @@
 Family::Application.routes.draw do
 
+  get "users/login"
+  get "users/edit"
+  get "users/destroy_session"
   get "front/index"
-
   get "front/show"
-
   get "front/search"
-
-  # static pages routes
   get "static_pages/index"
   get "static_pages/article"
   get "static_pages/clinic_information"
@@ -16,6 +15,9 @@ Family::Application.routes.draw do
   get "static_pages/privacy_policy"
   get "static_pages/terms_of_use"
   get "static_pages/disclaimer"
+
+  match "users/login" => "users#login_attempt", :via => :post
+  match "login" => "users#login"
 
   resources :articles
 

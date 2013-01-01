@@ -16,6 +16,8 @@
 <div class="main">
 	<div class="news">news</div>
 	<div class="promo">
+		<%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
 		<h1>StaticPages#index</h1>
 		<p>Find me in app/views/static_pages/index.html.erb</p>
 	</div>
