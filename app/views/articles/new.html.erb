@@ -1,6 +1,9 @@
 <div class="main">
   <div class="article">
 
+    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+
     <h2>Create New Article</h2>
 
     <%= form_tag({controller: "articles"}, {method: "post"}) do %>

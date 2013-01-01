@@ -7,8 +7,10 @@
     <h1>Listing all articles</h1>
 
     <% @articles.each do |article| %>
-      <h2><%= link_to(article.title, article_path(article.id)) %><%= " <i>(hidden)</i>".html_safe if article.visible == "false" or not article.visible %></h2>
-      <%= "#{article.body}".html_safe %>
+      <% if article.visible %>
+        <h2><%= link_to(article.title, front_show_path(id: article.id)) %></h2>
+        <%= "#{article.body}".html_safe %>
+      <% end %>
     <% end %>
 
   </div>

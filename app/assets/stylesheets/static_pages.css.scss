@@ -98,6 +98,20 @@ h1, h2 {
 	margin-top: 0;
 }
 
+.error {
+	padding: 10px;
+	background-color: #FFBDBD;
+	border: 1px solid #C40000;
+	color: #C40000;
+}
+
+.notice {
+	padding: 10px;
+	background-color: #ABFFB5;
+	border: 1px solid #00A814;
+	color: #00A814;
+}
+
 /* header CSS */
 
 .header_bar1 {

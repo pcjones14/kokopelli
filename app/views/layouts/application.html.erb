@@ -12,7 +12,7 @@
 
 		<header>
 			<div class="header_bar1">
-				<div class="logo"><%= image_tag("logo.jpg") %></div>
+				<div class="logo"><%= link_to(image_tag("logo.jpg"), static_pages_index_path) %></div>
 				<nav class="primary">
 					<ul>
 						<li><%= link_to("Home", root_path) %></li>

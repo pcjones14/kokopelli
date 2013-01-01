@@ -1,5 +1,11 @@
 Family::Application.routes.draw do
 
+  get "front/index"
+
+  get "front/show"
+
+  get "front/search"
+
   # static pages routes
   get "static_pages/index"
   get "static_pages/article"
