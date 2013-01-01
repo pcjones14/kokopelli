@@ -4,10 +4,8 @@
     <h1>Listing all articles</h1>
 
     <% @articles.each do |article| %>
-      <% if article.visible %>
-        <h2><%= link_to(article.title, article_path(article.id)) %></h2>
-        <%= "#{article.body}".html_safe %>
-      <% end %>
+      <h2><%= link_to(article.title, article_path(article.id)) %><%= " <i>(hidden)</i>".html_safe if article.visible == "false" or not article.visible %></h2>
+      <%= "#{article.body}".html_safe %>
     <% end %>
 
   </div>

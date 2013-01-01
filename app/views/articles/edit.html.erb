@@ -1,2 +1,19 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<div class="main">
+  <div class="article">
+
+    <h2>Editing article <i><%= @article.title %></i></h2>
+
+    <%= form_for @article, method: "put" do |f| %>
+      <p>Title:<br/>
+        <%= f.text_field :title %></p>
+      <p>Body:<br/>
+        <%= f.text_area :body, size: "80x20" %></p>
+      <p>Tags:<br/>
+        <%= f.text_field :tags %></p>
+      <p>Visible:<br/>
+        Yes <%= f.radio_button "visible", true %> No <%= f.radio_button "visible", false %></p>
+      <p><%= f.submit %></p>
+    <% end %>
+
+  </div>
+</div>

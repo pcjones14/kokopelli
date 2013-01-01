@@ -8,5 +8,7 @@
 
     <p><i>Tags: <%= @article.tags %></i></p>
 
+    <p><i><%= link_to("Edit", edit_article_path(@article.id)) %></i> | <i><%= link_to("Delete", article_path, method: "delete") %></i></p>
+
   </div>
 </div>
