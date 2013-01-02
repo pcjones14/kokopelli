@@ -6,83 +6,55 @@
 
 /* default HTML4 CSS */
 
-html, address,
-blockquote,
-body, dd, div,
-dl, dt, fieldset, form,
-frame, frameset,
-h1, h2, h3, h4,
-h5, h6, noframes,
-ol, p, ul, center,
-dir, hr, menu, pre   { display: block; unicode-bidi: embed }
-li              { display: list-item }
-head            { display: none }
-table           { display: table }
-tr              { display: table-row }
-thead           { display: table-header-group }
-tbody           { display: table-row-group }
-tfoot           { display: table-footer-group }
-col             { display: table-column }
-colgroup        { display: table-column-group }
-td, th          { display: table-cell }
-caption         { display: table-caption }
-th              { font-weight: bolder; text-align: center }
-caption         { text-align: center }
-body            { margin: 8px }
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h4, p,
-blockquote, ul,
-fieldset, form,
-ol, dl, dir,
-menu            { margin: 1.12em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
-h1, h2, h3, h4,
-h5, h6, b,
-strong          { font-weight: bolder }
-blockquote      { margin-left: 40px; margin-right: 40px }
-i, cite, em,
-var, address    { font-style: italic }
-pre, tt, code,
-kbd, samp       { font-family: monospace }
-pre             { white-space: pre }
-button, textarea,
-input, select   { display: inline-block }
-big             { font-size: 1.17em }
-small, sub, sup { font-size: .83em }
-sub             { vertical-align: sub }
-sup             { vertical-align: super }
-table           { border-spacing: 2px; }
-thead, tbody,
-tfoot           { vertical-align: middle }
-td, th, tr      { vertical-align: inherit }
-s, strike, del  { text-decoration: line-through }
-hr              { border: 1px inset }
-ol, ul, dir,
-menu, dd        { margin-left: 40px }
-ol              { list-style-type: decimal }
-ol ul, ul ol,
-ul ul, ol ol    { margin-top: 0; margin-bottom: 0 }
-u, ins          { text-decoration: underline }
-br:before       { content: "\A"; white-space: pre-line }
-center          { text-align: center }
-:link, :visited { text-decoration: underline }
-:focus          { outline: thin dotted invert }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
-BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
-
-*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
-*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
-
-@media print {
-  h1            { page-break-before: always }
-  h1, h2, h3,
-  h4, h5, h6    { page-break-after: avoid }
-  ul, ol, dl    { page-break-before: avoid }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 /* site-wide CSS */
 
 html, body {
@@ -98,8 +70,12 @@ html, body {
 	background-color: #DACCBF;
 }
 
-h1, h2 {
-	margin-top: 0;
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
 }
 
 .error {
@@ -123,9 +99,11 @@ h1, h2 {
 }
 
 .logo {
-	height: 103px;
-	width: 250px;
+	height: 83px;
+	width: 230px;
 	float: left;
+	background-color: #FFF;
+	padding: 10px;
 }
 
 .logo img {
@@ -140,8 +118,27 @@ nav.primary {
 	background-color: #FFF;
 }
 
-nav.primary ul {
-	margin-top: 0;
+nav.primary ul li {
+	background-color: #EEE;
+}
+
+nav.primary ul li a {
+	display: block;
+	position: relative;
+	padding: 30px;
+}
+
+nav.primary ul li.top {
+	float: left;
+}
+
+nav.primary ul li ul {
+	display: none;
+}
+
+nav.primary ul li:hover ul {
+	display: block;
+	position: relative;
 }
 
 .header_bar2 {
@@ -233,8 +230,9 @@ footer p {
 }
 
 .footer_box {
-	height: 237px;
-	width: 237px;
+	height: 217px;
+	width: 217px;
+	padding: 10px;
 	float: left;
 	margin-right: 4px;
 	background-color: #FFF;
