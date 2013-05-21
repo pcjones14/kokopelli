@@ -48,7 +48,15 @@
         <%= "<li>".html_safe + link_to('Login', users_login_path) + "</li>".html_safe if !session[:login] %>
       </ul>
     </li>
-    <%= "<li>".html_safe + link_to('Logout', users_destroy_session_path) + "</li>".html_safe if session[:login] %>
+    <% if session[:login] %>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Tools <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to('Articles', articles_path) %></li>
+          <li><%= link_to('New Article', new_article_path) %></li>
+          <li><%= link_to('Logout', users_destroy_session_path) %></li>
+        </ul>
+      </li>
+    <% end %>
   </ul>
 
   <%= yield %>

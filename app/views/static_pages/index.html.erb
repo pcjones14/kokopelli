@@ -38,7 +38,7 @@
   <div class="span4">
     <h2>Latest News</h2>
     <% @articles.each do |article| %>
-    <%= link_to("<h3 class=\"article-title\">#{article.title}</h3>".html_safe, article_path(article.id)) %>
+    <%= link_to("<h3 class=\"article-title\">#{article.title}</h3>".html_safe, front_show_path(id: article.id)) %>
     <%= "<p>#{article.body}</p>"[0..247].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more", article_path(article.id)) %>
     <% end %>
   </div>
