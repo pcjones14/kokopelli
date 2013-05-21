@@ -19,14 +19,16 @@
     <div class="border-right">
       
       <div class="row-fluid">
-        <div class="span6">
-          <p><%= link_to(image_tag(@promos[0].promo.url, class: 'img-rounded'), front_show_path(id: @promos[0])) %></p>
-          <p><%= link_to(image_tag(@promos[1].promo.url, class: 'img-rounded'), front_show_path(id: @promos[1])) %></p>
-        </div>
-        <div class="span6">
-          <p><%= link_to(image_tag(@promos[2].promo.url, class: 'img-rounded'), front_show_path(id: @promos[2])) %></p>
-          <p><%= link_to(image_tag(@promos[3].promo.url, class: 'img-rounded'), front_show_path(id: @promos[3])) %></p>
-        </div>
+        <% if !@promos.empty? %>
+          <div class="span6">
+            <p><%= link_to(image_tag(@promos[0].promo.url, class: 'img-rounded'), front_show_path(id: @promos[0])) %></p>
+            <p><%= link_to(image_tag(@promos[1].promo.url, class: 'img-rounded'), front_show_path(id: @promos[1])) %></p>
+          </div>
+          <div class="span6">
+            <p><%= link_to(image_tag(@promos[2].promo.url, class: 'img-rounded'), front_show_path(id: @promos[2])) %></p>
+            <p><%= link_to(image_tag(@promos[3].promo.url, class: 'img-rounded'), front_show_path(id: @promos[3])) %></p>
+          </div>
+        <% end %>
 
       </div>
 
