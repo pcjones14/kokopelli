@@ -2,6 +2,8 @@ class StaticPagesController < ApplicationController
 
   def index
     @articles = Article.last(2)
+
+    @promos = Article.where("promo_file_name <> 'nil'").order("updated_at DESC").limit(4)
   end
 
   def article

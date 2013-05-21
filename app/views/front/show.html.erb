@@ -10,6 +10,8 @@
 
     <%= "#{@article.body}".html_safe %>
 
+    <%= image_tag @article.image.url if !@article.image_file_name.nil? %>
+
     <p><i>Keywords: <%= "#{tag_string}".html_safe %></i></p>
 
     <%= link_to('&larr; back'.html_safe, :back) %>

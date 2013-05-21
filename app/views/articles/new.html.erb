@@ -7,7 +7,7 @@
 
     <h2>Create New Article</h2>
 
-    <%= form_tag({controller: "articles"}, {method: "post"}) do %>
+    <%= form_tag({controller: "articles"}, {method: "post", multipart: true}) do %>
       <p>Title:<br/>
         <%= text_field_tag(:title) %></p>
       <p>Author:<br/>
@@ -20,6 +20,8 @@
         <%= text_field_tag(:tags) %></p>
       <p>Visible:<br/>
         Yes <%= radio_button_tag(:visible, true, "checked") %> No <%= radio_button_tag(:visible, false) %></p>
+      <p>Image:<br/>
+        <%= file_field_tag :image %></p>
       <p>Promo image <i>(must be 293x220px)</i>:<br/>
         <%= file_field_tag :promo %></p>
       <p><%= submit_tag %></p>

@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     authenticate
-    article = Article.create( params )
+    article = Article.create(title: params[:title], body: params[:body], tags: params[:tags], visible: params[:visible], promo: params[:promo], image: params[:image])
     if article.valid?
       flash[:notice] = "Article successfully created."
       redirect_to articles_path

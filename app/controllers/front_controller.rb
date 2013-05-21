@@ -1,6 +1,6 @@
 class FrontController < ApplicationController
   def index
-    @articles = Article.where(visible: true).order(:updated_at).page params[:page]
+    @articles = Article.where(visible: true).order("updated_at DESC").page params[:page]
   end
 
   def show
@@ -11,10 +11,10 @@ class FrontController < ApplicationController
   def search
     if !params[:keyword].blank?
       q = "%#{params[:keyword]}%"
-      @articles = Article.where("tags LIKE ?", q).where(visible: true).order(:updated_at).page params[:page]
+      @articles = Article.where("tags LIKE ?", q).where(visible: true).order("updated_at DESC").page params[:page]
       @string = "keyword \"#{params[:keyword]}\""
     elsif !params[:category].blank?
-      @articles = Article.where("category = '#{params[:category]}'").where(visible:true).order(:updated_at).page params[:page]
+      @articles = Article.where("category = '#{params[:category]}'").where(visible:true).order("updated_at DESC").page params[:page]
       @string = "category \"#{params[:category]}\""
     end
   end

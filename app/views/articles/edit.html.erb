@@ -20,6 +20,12 @@
         <%= f.text_field :tags %></p>
       <p>Visible:<br/>
         Yes <%= f.radio_button "visible", true %> No <%= f.radio_button "visible", false %></p>
+      <p>Image:<br/>
+        <%= f.file_field :image %></p>
+        <%= image_tag @article.image.url if !@article.image_file_name.nil? %>
+      <p>Promo image <i>(must be 293x220px)</i>:<br/>
+        <%= f.file_field :promo %></p>
+        <%= image_tag @article.promo.url if !@article.promo_file_name.nil? %>
       <p><%= f.submit %></p>
     <% end %>
 
