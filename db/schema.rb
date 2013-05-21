@@ -11,15 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130101203949) do
+ActiveRecord::Schema.define(:version => 20130521100656) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.string   "tags"
     t.boolean  "visible"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "author"
+    t.string   "category"
+    t.string   "promo_file_name"
+    t.string   "promo_content_type"
+    t.integer  "promo_file_size"
+    t.datetime "promo_updated_at"
   end
 
   create_table "users", :force => true do |t|

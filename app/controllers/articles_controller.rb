@@ -1,17 +1,23 @@
 class ArticlesController < ApplicationController
+  include ApplicationHelper
+
   def index
-    @articles = Article.all
+    authenticate
+    @articles = Article.order("updated_at DESC").page params[:page]
   end
 
   def show
+    authenticate
     @article = Article.find(params[:id])
   end
 
   def new
+    authenticate
   end
 
   def create
-    article = Article.create(title: params[:title], body: params[:body], tags: params[:tags], visible: params[:visible])
+    authenticate
+    article = Article.create( params )
     if article.valid?
       flash[:notice] = "Article successfully created."
       redirect_to articles_path
@@ -26,10 +32,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    authenticate
     @article = Article.find(params[:id])
   end
 
   def update
+    authenticate
     article = Article.find(params[:id])
     article.update_attributes(params[:article])
     if article.valid?
@@ -46,6 +54,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authenticate
     Article.destroy(params[:id])
     flash[:notice] = "Article successfully deleted."
     redirect_to articles_path

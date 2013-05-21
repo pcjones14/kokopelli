@@ -1,15 +1,20 @@
 <div class="main">
   <div class="article">
 
-    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
-    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+    <%= "<div class=\"alert alert-success\">#{flash[:notice]}</div>".html_safe if flash[:notice] %>
+    <%= "<div class=\"alert alert-error\">#{flash[:error]}</div>".html_safe if flash[:error] %>
+    <div class="alert alert-info">You are currently in the backend</div>
 
     <h1>Listing all articles</h1>
 
     <% @articles.each do |article| %>
       <h2><%= link_to(article.title, article_path(article.id)) %><%= " <i>(hidden)</i>".html_safe if article.visible == "false" or not article.visible %></h2>
+      <h4><%= article.updated_at %></h4>
       <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more", article_path(article.id)) %>
+      <hr />
     <% end %>
+
+    <div class="centered pagination"><%= paginate @articles %></div>
 
   </div>
 </div>

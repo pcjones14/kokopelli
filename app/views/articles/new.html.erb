@@ -1,20 +1,27 @@
 <div class="main">
   <div class="article">
 
-    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
-    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+    <%= "<div class=\"alert alert-success\">#{flash[:notice]}</div>".html_safe if flash[:notice] %>
+    <%= "<div class=\"alert alert-error\">#{flash[:error]}</div>".html_safe if flash[:error] %>
+    <div class="alert alert-info">You are currently in the backend</div>
 
     <h2>Create New Article</h2>
 
     <%= form_tag({controller: "articles"}, {method: "post"}) do %>
       <p>Title:<br/>
         <%= text_field_tag(:title) %></p>
+      <p>Author:<br/>
+        <%= text_field_tag :author %></p>
+      <p>Category:<br/>
+        <%= text_field_tag :category %></p>
       <p>Body:<br/>
         <%= text_area_tag(:body, nil, rows: 20, cols: 80) %></p>
       <p>Keywords <i>(separate with commas)</i>:<br/>
         <%= text_field_tag(:tags) %></p>
       <p>Visible:<br/>
         Yes <%= radio_button_tag(:visible, true, "checked") %> No <%= radio_button_tag(:visible, false) %></p>
+      <p>Promo image <i>(must be 293x220px)</i>:<br/>
+        <%= file_field_tag :promo %></p>
       <p><%= submit_tag %></p>
     <% end %>
 

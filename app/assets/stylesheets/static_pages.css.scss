@@ -1,245 +1,80 @@
-/* Google fonts imports */
+// Place all the styles related to the Static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url(http://fonts.googleapis.com/css?family=Rambla);
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
-
-/* default HTML4 CSS */
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* site-wide CSS */
-
-html, body {
-	font-family: "Source Sans Pro", sans-serif;
-	background-color: #DACCBF;
-	margin: 0;
-	padding: 0;
-}
+@import 'bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 
 .container {
-	width: 960px;
-	margin: 0 auto;
-	background-color: #DACCBF;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-h1 {
-	font-size: 2em;
+.nav {
+  margin-top: 10px;
 }
 
-h2 {
-	font-size: 1.5em;
+.centered {
+  text-align: center;
 }
 
-.error {
-	padding: 10px;
-	background-color: #FFBDBD;
-	border: 1px solid #C40000;
-	color: #C40000;
+.centered p {
+  font-size: 3em;
+  margin-top: 40px;
+  font-family: "Didact Gothic";
 }
 
-.notice {
-	padding: 10px;
-	background-color: #ABFFB5;
-	border: 1px solid #00A814;
-	color: #00A814;
+.translucent {
+  background-color: rgba(240, 240, 240, 0.6);
+  margin: 40px;
+  padding: 60px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
 }
 
-/* header CSS */
-
-.header_bar1 {
-	height: 103px;
+.hero-unit {
+  background-image: image-url('banner.jpg');
+  padding: 20px;
 }
 
-.logo {
-	height: 83px;
-	width: 230px;
-	float: left;
-	background-color: #FFF;
-	padding: 10px;
+.hero-unit h1 {
+  font-size: 45px;
 }
 
-.logo img {
-	margin-top: 0;
+.footer {
+  margin-top: 25px;
 }
 
-nav.primary {
-	height: 103px;
-	width: 710px;
-	margin-left: 250px;
-	margin-top: 0;
-	background-color: #FFF;
+.footer .span3 div {
+  border-right: 1px solid #EEE;
+  height: 215px;
 }
 
-nav.primary ul li {
-	background-color: #EEE;
+.footer .span3:last-child div {
+  border-right: none;
+  height: 215px;
 }
 
-nav.primary ul li a {
-	display: block;
-	position: relative;
-	padding: 30px;
+.justify {
+  text-align: justify;
 }
 
-nav.primary ul li.top {
-	float: left;
+.border-right {
+  border-right: 1px solid #EEE;
+  padding-right: 20px;
 }
 
-nav.primary ul li ul {
-	display: none;
+.border-left {
+  border-left: 1px solid #EEE;
+  padding-left: 20px;
 }
 
-nav.primary ul li:hover ul {
-	display: block;
-	position: relative;
+.article-title {
+  font-size: 1.5em;
+  line-height: 1;
 }
 
-.header_bar2 {
-	height: 270px;
-}
-
-.banner {
-	height: 270px;
-	width: 630px;
-	float: left;
-	background-color: #FFF;
-}
-
-.welcome {
-	height: 270px;
-	width: 330px;
-	margin-left: 630px;
-	background-color: #FFF;
-}
-
-.welcome p {
-	margin-top: 0;
-}
-
-/* index_bar CSS */
-
-.index_bar {
-	height: 210px;
-}
-
-nav.secondary {
-	height: 200px;
-	width: 300px;
-	margin: 5px 0;
-	float: left;
-	background-color: #FFF;
-}
-
-.video {
-	height: 200px;
-	width: 370px;
-	margin: 5px;
-	float: left;
-	background-color: #FFF;
-}
-
-.info {
-	height: 200px;
-	width: 280px;
-	margin: 5px 0;
-	float: right;
-	background-color: #FFF;
-}
-
-/* main CSS */
-
-.news {
-	height: 500px;
-	width: 300px;
-	float: left;
-	background-color: #FFF;
-}
-
-.promo {
-	height: 500px;
-	margin-left: 305px;
-	background-color: #FFF;
-}
-
-.promo p {
-	margin-top: 0;
-}
-
-.article {
-	margin-top: 5px;
-	padding: 10px;
-	background-color: #FFF;
-}
-
-/* footer CSS */
-
-footer {
-	margin-top: 5px;
-	font-size: .85em;
-}
-
-footer p {
-	margin-top: 0;
-}
-
-.footer_box {
-	height: 217px;
-	width: 217px;
-	padding: 10px;
-	float: left;
-	margin-right: 4px;
-	background-color: #FFF;
-}
-
-.footer_box:last-child {
-	float: none;
-	margin-left: 723px;
-	margin-right: 0;
+.btn a {
+  color: white;
 }

@@ -23,4 +23,6 @@ Family::Application.routes.draw do
 
   root :to => 'static_pages#index'
 
+  match '*a', :to => 'errors#routing'
+
 end

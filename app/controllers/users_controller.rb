@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def login_attempt
-    if params[:email] == "rcarter@centralutahclinic.com" and Digest::MD5.hexdigest(params[:password]) == "0958dd9d8965932aee2777e1ea86963d"
+    if params[:email] == "rcarter@centralutahclinic.com" and Digest::MD5.hexdigest(params[:password]) == "5f4dcc3b5aa765d61d8327deb882cf99"
       session[:login] = true
       flash[:notice] = "Successfully logged in."
       redirect_to articles_path

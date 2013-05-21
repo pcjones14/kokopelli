@@ -1,24 +1,44 @@
-<div class="index_bar">
-	<nav class="secondary">
-		<ul>
-			<li><a href="#">one</a></li>
-			<li><a href="#">two</a></li>
-			<li><a href="#">three</a></li>
-			<li><a href="#">four</a></li>
-		</ul>
-	</nav>
-	<div class="video">
-		<iframe width="370" height="200" src="http://www.youtube.com/embed/mL5TXGqPrIw?rel=0" frameborder="0" allowfullscreen></iframe>
-	</div>
-	<div class="info">info</div>
+<div class="row">
+
+  <%= "<div class=\"alert alert-success\">#{flash[:notice]}</div>".html_safe if flash[:notice] %>
+  <%= "<div class=\"alert alert-error\">#{flash[:error]}</div>".html_safe if flash[:error] %>
+
+  <div class="hero-unit">
+    <div class="translucent">
+      <h1>Care. Compassion. Quality.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis mollis dolor, at accumsan lorem imperdiet ac. Ut eu libero erat. In fermentum metus nec ipsum tempor id ultricies justo commodo. Quisque id commodo odio. Integer ac lectus quis est tincidunt tempor. Nullam gravida ullamcorper aliquet. Cras sed gravida libero. Proin justo ante, bibendum eget dictum at, imperdiet eleifend tortor. Mauris dignissim facilisis lectus.</p>
+      <%= link_to("<div class=\"btn btn-primary btn-large\">Learn more</div>".html_safe, static_pages_clinic_information_path) %>
+    </div>
+  </div>
+
 </div>
 
-<div class="main">
-	<div class="news">news</div>
-	<div class="promo">
-		<%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
-    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
-		<h1>StaticPages#index</h1>
-		<p>Find me in app/views/static_pages/index.html.erb</p>
-	</div>
+<div class="row">
+
+  <div class="span8">
+    <div class="border-right">
+      
+      <div class="row-fluid">
+        <div class="span6">
+          <p><%= link_to(image_tag('square1.jpg', class: 'img-rounded'), front_index_path) %></p>
+          <p><%= link_to(image_tag('square2.jpg', class: 'img-rounded'), front_index_path) %></p>
+        </div>
+        <div class="span6">
+          <p><%= link_to(image_tag('square3.jpg', class: 'img-rounded'), front_index_path) %></p>
+          <p><%= link_to(image_tag('square4.jpg', class: 'img-rounded'), front_index_path) %></p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="span4">
+    <h2>Latest News</h2>
+    <% @articles.each do |article| %>
+    <%= link_to("<h3 class=\"article-title\">#{article.title}</h3>".html_safe, article_path(article.id)) %>
+    <%= "<p>#{article.body}</p>"[0..247].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more", article_path(article.id)) %>
+    <% end %>
+  </div>
+
 </div>
