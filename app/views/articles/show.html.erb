@@ -1,8 +1,10 @@
 <div class="main">
   <div class="article">
 
+    <div class="alert alert-info">You are currently in the backend</div>
+
     <h2 style="margin-bottom:0;"><%= @article.title %></h2>
-    <p style="margin-top:0;"><i><%= "#{@article.updated_at}"[0...-4] %></i>
+    <h5>by <%= @article.author %> <%= "#{@article.updated_at}"[0...-12] %> | category: <%= link_to(@article.category, front_search_path(category: @article.category)) %></h5>
 
     <%= "#{@article.body}".html_safe %>
 
