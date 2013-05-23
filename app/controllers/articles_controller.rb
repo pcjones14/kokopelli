@@ -60,4 +60,20 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def delete_promo
+    article = Article.find(params[:id])
+    article.promo.destroy
+    article.save
+    flash[:notice] = "Promo deleted"
+    redirect_to :back
+  end
+
+  def delete_image
+    article = Article.find(params[:id])
+    article.image.destroy
+    article.save
+    flash[:notice] = "Image deleted"
+    redirect_to :back
+  end
+
 end

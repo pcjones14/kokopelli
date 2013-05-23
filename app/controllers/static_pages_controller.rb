@@ -2,8 +2,8 @@ class StaticPagesController < ApplicationController
 
   def index
     @articles = Article.last(2)
-
     @promos = Article.where("promo_file_name <> 'nil'").order("updated_at DESC").limit(4)
+    flash.now[:page] = "home"
   end
 
   def article
@@ -28,6 +28,12 @@ class StaticPagesController < ApplicationController
   end
 
   def disclaimer
+  end
+
+  def contact
+  end
+
+  def legal
   end
 
 end

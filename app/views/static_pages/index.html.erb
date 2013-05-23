@@ -3,13 +3,62 @@
   <%= "<div class=\"alert alert-success\">#{flash[:notice]}</div>".html_safe if flash[:notice] %>
   <%= "<div class=\"alert alert-error\">#{flash[:error]}</div>".html_safe if flash[:error] %>
 
-  <div class="hero-unit">
-    <div class="translucent">
-      <h1>Care. Compassion. Quality.</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis mollis dolor, at accumsan lorem imperdiet ac. Ut eu libero erat. In fermentum metus nec ipsum tempor id ultricies justo commodo. Quisque id commodo odio. Integer ac lectus quis est tincidunt tempor. Nullam gravida ullamcorper aliquet. Cras sed gravida libero. Proin justo ante, bibendum eget dictum at, imperdiet eleifend tortor. Mauris dignissim facilisis lectus.</p>
-      <%= link_to("<div class=\"btn btn-primary btn-large\">Learn more</div>".html_safe, static_pages_clinic_information_path) %>
+  <!-- <div id="myCarousel" class="carousel slide" style="margin-left:20px;">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+    
+    <div class="carousel-inner">
+      <div class="active item"><%= image_tag('couples-arms-sky.jpg') %>
+        <div class="carousel-caption">
+          <h4>Yeah, well.</h4>
+          <p>That's just, like, your opinion, man.</p>
+        </div>
+      </div>
+      <div class="item"><%= image_tag('kid-basketball.jpg') %>
+        <div class="carousel-caption">
+          <h4>Yeah, well.</h4>
+          <p>That's just, like, your opinion, man.</p>
+        </div>
+      </div>
+      <div class="item"><%= image_tag('super-kid-cmyk.jpg') %>
+        <div class="carousel-caption">
+          <h4>Yeah, well.</h4>
+          <p>That's just, like, your opinion, man.</p>
+        </div>
+      </div>
+      <div class="item"><%= image_tag('familypic-banner.jpg') %>
+        <div class="carousel-caption">
+          <h4>Yeah, well.</h4>
+          <p>That's just, like, your opinion, man.</p>
+        </div>
+      </div>
+      <div class="item"><%= image_tag('nurse-purple.jpg') %>
+        <div class="carousel-caption">
+          <h4>Yeah, well.</h4>
+          <p>That's just, like, your opinion, man.</p>
+        </div>
+      </div>
+      <div class="item"><%= image_tag('young-woman-cowgirl.jpg') %>
+        <div class="carousel-caption">
+          <h4>Yeah, well.</h4>
+          <p>That's just, like, your opinion, man.</p>
+        </div>
+      </div>
     </div>
+    
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
   </div>
+
+  -->
+
+  <div style="margin:0 0 20px 20px;"><%= image_tag('banner' + rand(1..6).to_s + ".jpg") %></div>
 
 </div>
 
@@ -39,7 +88,7 @@
     <h2>Latest News</h2>
     <% @articles.each do |article| %>
     <%= link_to("<h3 class=\"article-title\">#{article.title}</h3>".html_safe, front_show_path(id: article.id)) %>
-    <%= "<p>#{article.body}</p>"[0..247].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more", article_path(article.id)) %>
+    <%= "<p>#{article.body}</p>"[0..247].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more", front_show_path(id: article.id)) %>
     <% end %>
   </div>
 

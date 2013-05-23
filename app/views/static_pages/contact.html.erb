@@ -1,0 +1,43 @@
+<div class="contact">
+  <h2>Contact Us</h2>
+
+  <%= form_tag do %>
+
+  <h3>Your Personal Info</h3>
+
+  <p>First name: <br/>
+    <%= text_field_tag(:first, "", placeholder: "Bobby") %></p>
+
+  <p>Last name: <br/>
+    <%= text_field_tag(:last, "", placeholder: "Tables") %></p>
+
+  <p>Address line 1: <br/>
+    <%= text_field_tag(:addr1, "", placeholder: "123 Fake Street") %></p>
+
+  <p>Address line 2: <br/>
+    <%= text_field_tag(:addr2, "", placeholder: "Ste 1") %></p>
+
+  <p>City: <br/>
+    <%= text_field_tag(:city, "", placeholder: "Nowhereville") %></p>
+
+  <p>State: <br/>
+    <%= text_field_tag(:state, "", placeholder: "UT") %></p>
+
+  <p>ZIP code: <br/>
+    <%= text_field_tag(:zip, "", placeholder: "12345") %></p>
+
+  <p>Email: <br/>
+    <%= text_field_tag(:email, "", placeholder: "bobby@thefamilyclinic.com") %></p>
+
+  <h3>Contact Reason</h3>
+
+  <p>The reason for your contact is: <br/>
+    <%= select_tag(:reason, options_for_select([['Need appointment'], ['Billing question'], ['Records request'], ['Patient feedback'], ['Contact office manager'], ['Other']])) %></p>
+
+  <h3>Your message</h3>
+  <p><%= text_area_tag(:message, "", size: "5x12", class: "span8", placeholder: "enter your message here...") %></p>
+
+  <p><%= submit_tag "Submit form" %></p>
+
+  <% end %>
+</div>

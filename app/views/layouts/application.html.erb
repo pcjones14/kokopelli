@@ -24,7 +24,7 @@
   <% end %>
 
   <ul class="nav nav-tabs">
-    <li class="active"><%= link_to("Home", root_path) %></li>
+    <li><%= link_to("Home", root_path) %></li>
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><%= link_to('Clinic Information', static_pages_clinic_information_path) %></li>
@@ -32,7 +32,7 @@
         <li><%= link_to('Our Staff', static_pages_staff_path) %></li>
       </ul>
     </li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">News <b class="caret"></b></a>
+    <li class="dropdown <%= 'class="active"' if flash[:page] == "about"%>"><a class="dropdown-toggle" data-toggle="dropdown" href="#">News <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><%= link_to('All News', front_index_path) %></li>
         <li><a href="/front/search?category=announcements">Announcements</a></li>
@@ -45,9 +45,9 @@
         <li><%= link_to('Make a Payment', 'https://secure.modpay.com/vterm/vterm1.cfm?an&ae=1&clientcode=33987ED0') %></li>
         <li><%= link_to('Request Medical Records', 'http://www.centralutahclinic.com/patient-resources/request-medical-records') %></li>
         <li><%= link_to('Central Utah Clinic Website', 'http://www.centralutahclinic.com/') %></li>
-        <%= "<li>".html_safe + link_to('Login', users_login_path) + "</li>".html_safe if !session[:login] %>
+        <li><%= link_to("Contact Us", static_pages_contact_path) %></li>
       </ul>
-    </li>
+    </li> 
     <% if session[:login] %>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Tools <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -61,37 +61,44 @@
 
   <%= yield %>
 
+  <hr />
+
   <div class="row footer">
 
-    <div class="span3">
+    <div class="span4">
       <div>
-        footer
+        <p><b>The Family Clinic</b><br/>
+          11 South Main Street<br/>
+          Hurricane, Utah 84737<br/>
+          435-635-9444</p>
+        <p><b>Hours:</b><br/>
+          8:00am - 6:00pm Mon - Sat</p>
+        <p><%= link_to(image_tag('facebook.png'), "https://www.facebook.com/Thefamilyclinic") %> <%= link_to(image_tag('twitter.png'), "https://twitter.com/tfclinic") %> <%= link_to(image_tag('youtube.png'), "http://www.youtube.com/user/thefamilyclinic?feature=watch") %></p>
       </div>
     </div>
 
-    <div class="span3">
+    <div class="span4">
       <div>
-        footer
+        <%= image_tag('map.jpg') %>
       </div>
     </div>
 
-    <div class="span3">
+    <div class="span4">
       <div>
-        <p><b>Legal</b></p>
-				<p><%= link_to("Privacy Practice", static_pages_privacy_practice_path) %></p>
-				<p><%= link_to("Privacy Policy", static_pages_privacy_policy_path) %></p>
-				<p><%= link_to("Terms of Use", static_pages_terms_of_use_path) %></p>
-				<p><%= link_to("Disclaimer", static_pages_disclaimer_path) %></p>
-      </div>
-    </div>
-
-    <div class="span3">
-      <div>
-        <div class="footer_box"><p>Copyright &copy;2007-2013 The Hurricane Family Clinic. All Rights Reserved.</p><p>Services provided in partership with:<br/><br/><%= link_to(image_tag("central_utah_clinic_logo.gif", width: 200), "http://centralutahclinic.com/") %></p>
+        <iframe width="300" height="215" src="http://www.youtube.com/embed/mL5TXGqPrIw" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
 
   </div>
+
+  <hr />
+
+  <footer>
+    <p class="muted">Copyright &copy;2007-2013 The Hurricane Family Clinic<%= link_to(".", users_login_path, style:"color:#999;") %> All Rights Reserved.</p>
+      <p><%= link_to("Privacy Practice", static_pages_privacy_practice_path) %> | <%= link_to("Privacy Policy", static_pages_privacy_policy_path) %> | <%= link_to("Terms of Use", static_pages_terms_of_use_path) %> | <%= link_to("Disclaimer", static_pages_disclaimer_path) %></p>
+    <p class="muted">Services provided in partership with:</p>
+    <p><%= link_to(image_tag("central_utah_clinic_logo.gif", size: "200x150"), "http://centralutahclinic.com/") %></p> 
+  </footer>
 
 </div>
 

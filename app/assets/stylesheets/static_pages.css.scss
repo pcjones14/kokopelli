@@ -10,6 +10,14 @@
   margin-bottom: 20px;
 }
 
+a {
+  color: #A71A13;
+}
+
+a:hover {
+  color: #FBBF13;
+}
+
 .nav {
   margin-top: 10px;
 }
@@ -46,12 +54,12 @@
   margin-top: 25px;
 }
 
-.footer .span3 div {
+.footer .span4 div {
   border-right: 1px solid #EEE;
   height: 215px;
 }
 
-.footer .span3:last-child div {
+.footer .span4:last-child div {
   border-right: none;
   height: 215px;
 }
@@ -77,4 +85,61 @@
 
 .btn a {
   color: white;
+}
+
+.aform input, .aform textarea {
+  width: 600px;
+}
+
+.radio {
+  border: 40px solid blue;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: #FBBF13;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FBBF13;
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FBBF13;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FBBF13;
+}
+
+.caret {
+  border-top-color: #A71A13 !important;
+  border-bottom-color: #A71A13 !important;
+}
+
+li:hover .caret {
+  border-top-color: #FBBF13 !important;
+  border-bottom-color: #FBBF13 !important;
+}
+
+.img-polaroid {
+  margin-right: 20px;
+}
+
+.contact h3 {
+  border-bottom: 1px solid black;
+}
+
+footer {
+  margin: 20px 0;
+  text-align: center;
 }

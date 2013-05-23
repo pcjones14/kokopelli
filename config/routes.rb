@@ -15,10 +15,16 @@ Family::Application.routes.draw do
   get "static_pages/privacy_policy"
   get "static_pages/terms_of_use"
   get "static_pages/disclaimer"
+  get "static_pages/contact"
+  get "static_pages/legal"
+
+  match "static_pages/contact" => "static_pages#submit_contact", :via => :post
 
   match "users/login" => "users#login_attempt", :via => :post
   match "login" => "users#login"
 
+  get "articles/delete_image"
+  get "articles/delete_promo"
   resources :articles
 
   root :to => 'static_pages#index'

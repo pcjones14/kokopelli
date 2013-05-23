@@ -7,27 +7,37 @@
 
     <h2>Editing article <i><%= @article.title %></i></h2>
 
-    <%= form_for @article, method: "put" do |f| %>
-      <p>Title:<br/>
-        <%= f.text_field :title %></p>
-      <p>Author:<br/>
-        <%= f.text_field :author %></p>
-      <p>Category:<br/>
-        <%= f.text_field :category %></p>
-      <p>Body:<br/>
-        <%= f.text_area :body, size: "80x20" %></p>
-      <p>Keywords <i>(separate with commas)</i>:<br/>
-        <%= f.text_field :tags %></p>
-      <p>Visible:<br/>
-        Yes <%= f.radio_button "visible", true %> No <%= f.radio_button "visible", false %></p>
-      <p>Image:<br/>
-        <%= f.file_field :image %></p>
-        <%= image_tag @article.image.url if !@article.image_file_name.nil? %>
-      <p>Promo image <i>(must be 293x220px)</i>:<br/>
-        <%= f.file_field :promo %></p>
-        <%= image_tag @article.promo.url if !@article.promo_file_name.nil? %>
-      <p><%= f.submit %></p>
-    <% end %>
+    <div class="aform">
+      <%= form_for @article, method: "put" do |f| %>
+        <p>Title:<br/>
+          <%= f.text_field :title %></p>
+        <p>Author:<br/>
+          <%= f.text_field :author %></p>
+        <p>Category:<br/>
+          <%= f.text_field :category %></p>
+        <p>Body:<br/>
+          <%= f.text_area :body, size: "80x20" %></p>
+        <p>Keywords <i>(separate with commas)</i>:<br/>
+          <%= f.text_field :tags %></p>
+        <p >Visible:<br/>
+          Yes <%= f.radio_button "visible", true, style: 'width:20px;' %> No <%= f.radio_button "visible", false, style: 'width:20px;' %></p>
+        <p>Image:<br/>
+          <%= f.file_field :image %></p>
+          <%= image_tag @article.image.url if !@article.image_file_name.nil? %>
+          <br/>
+          <br/>
+        <p>Promo image <i>(must be 293x220px)</i>:<br/>
+          <%= f.file_field :promo %></p>
+          <%= image_tag @article.promo.url if !@article.promo_file_name.nil? %>
+          <br/>
+          <br/>
+        <p><%= f.submit %></p>
+      <% end %>
+    </div>
+
+    <%= link_to("Delete image", controller: 'articles', action: 'delete_image', id: @article.id) %><br/>
+    <%= link_to("Delete promo", controller: 'articles', action: 'delete_promo', id: @article.id) %>
+
 
   </div>
 </div>
