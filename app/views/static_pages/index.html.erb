@@ -3,61 +3,6 @@
   <%= "<div class=\"alert alert-success\">#{flash[:notice]}</div>".html_safe if flash[:notice] %>
   <%= "<div class=\"alert alert-error\">#{flash[:error]}</div>".html_safe if flash[:error] %>
 
-  <!-- <div id="myCarousel" class="carousel slide" style="margin-left:20px;">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-      <li data-target="#myCarousel" data-slide-to="5"></li>
-    </ol>
-    
-    <div class="carousel-inner">
-      <div class="active item"><%= image_tag('couples-arms-sky.jpg') %>
-        <div class="carousel-caption">
-          <h4>Yeah, well.</h4>
-          <p>That's just, like, your opinion, man.</p>
-        </div>
-      </div>
-      <div class="item"><%= image_tag('kid-basketball.jpg') %>
-        <div class="carousel-caption">
-          <h4>Yeah, well.</h4>
-          <p>That's just, like, your opinion, man.</p>
-        </div>
-      </div>
-      <div class="item"><%= image_tag('super-kid-cmyk.jpg') %>
-        <div class="carousel-caption">
-          <h4>Yeah, well.</h4>
-          <p>That's just, like, your opinion, man.</p>
-        </div>
-      </div>
-      <div class="item"><%= image_tag('familypic-banner.jpg') %>
-        <div class="carousel-caption">
-          <h4>Yeah, well.</h4>
-          <p>That's just, like, your opinion, man.</p>
-        </div>
-      </div>
-      <div class="item"><%= image_tag('nurse-purple.jpg') %>
-        <div class="carousel-caption">
-          <h4>Yeah, well.</h4>
-          <p>That's just, like, your opinion, man.</p>
-        </div>
-      </div>
-      <div class="item"><%= image_tag('young-woman-cowgirl.jpg') %>
-        <div class="carousel-caption">
-          <h4>Yeah, well.</h4>
-          <p>That's just, like, your opinion, man.</p>
-        </div>
-      </div>
-    </div>
-    
-    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-  </div>
-
-  -->
-
   <div style="margin:0 0 20px 20px;"><%= image_tag('banner' + rand(1..6).to_s + ".jpg") %></div>
 
 </div>
