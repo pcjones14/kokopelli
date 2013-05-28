@@ -1,3 +1,7 @@
+<% tag_string = "" %>
+<% @tags.each {|tag| tag_string += link_to(tag, front_search_path(keyword: tag)) + ", "} %>
+<% tag_string = tag_string[0...-2] %>
+
 <div class="main">
   <div class="article">
 
@@ -6,11 +10,11 @@
     <h2 style="margin-bottom:0;"><%= @article.title %></h2>
     <h5>by <%= @article.author %> <%= "#{@article.updated_at}"[0...-12] %> | category: <%= link_to(@article.category, front_search_path(category: @article.category)) %></h5>
 
+    <%= "<p style=\"text-align:center;\" class=\"img-rounded\">".html_safe + image_tag(@article.image.url) + "</p>".html_safe if !@article.image_file_name.nil? %>
+
     <%= "#{@article.body}".html_safe %>
 
-    <%= image_tag @article.image.url if !@article.image_file_name.nil? %>
-
-    <p><i>Keywords: <%= @article.tags %></i></p>
+    <p><i>Keywords: <%= "#{tag_string}".html_safe %></i></p>
 
     <p><i><%= link_to("Edit", edit_article_path(@article.id)) %></i> | <i><%= link_to("Delete", article_path, method: "delete") %></i></p>
 

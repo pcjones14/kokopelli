@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   def show
     authenticate
     @article = Article.find(params[:id])
+    @tags = @article.tags.split(",")
   end
 
   def new
@@ -17,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     authenticate
-    article = Article.create(title: params[:title], body: params[:body], tags: params[:tags], visible: params[:visible], promo: params[:promo], image: params[:image])
+    article = Article.create(title: params[:title], body: params[:body], tags: params[:tags], visible: params[:visible], promo: params[:promo], image: params[:image], category: params[:category])
     if article.valid?
       flash[:notice] = "Article successfully created."
       redirect_to articles_path

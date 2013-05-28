@@ -3,7 +3,7 @@
   <%= "<div class=\"alert alert-success\">#{flash[:notice]}</div>".html_safe if flash[:notice] %>
   <%= "<div class=\"alert alert-error\">#{flash[:error]}</div>".html_safe if flash[:error] %>
 
-  <div style="margin:0 0 20px 20px;"><%= image_tag('banner' + rand(6).to_s + ".jpg") %></div>
+  <div style="margin:0 0 20px 20px;"><%= image_tag('banner' + (rand(5)+1).to_s + ".jpg") %></div>
 
 </div>
 

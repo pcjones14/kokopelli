@@ -14,7 +14,7 @@
         <p>Author:<br/>
           <%= text_field_tag :author %></p>
         <p>Category:<br/>
-          <%= text_field_tag :category %></p>
+          <%= select_tag(:category, options_for_select([['announcements'], ['local'], ['research']])) %></p>
         <p>Body:<br/>
           <%= text_area_tag(:body, nil, rows: 20, cols: 80) %></p>
         <p>Keywords <i>(separate with commas)</i>:<br/>
