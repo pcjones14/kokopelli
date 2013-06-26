@@ -42,9 +42,10 @@
     </li>
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <li><%= link_to('Make a Payment', 'https://secure.modpay.com/vterm/vterm1.cfm?an&ae=1&clientcode=33987ED0') %></li>
-        <li><%= link_to('Request Medical Records', 'http://www.centralutahclinic.com/patient-resources/request-medical-records') %></li>
-        <li><%= link_to('Central Utah Clinic Website', 'http://www.centralutahclinic.com/') %></li>
+        <li><%= link_to('Follow My Health', 'https://centralutahclinic.followmyhealth.com/', target: "_blank") %></li>
+        <li><%= link_to('Make a Payment', 'https://secure.modpay.com/vterm/vterm1.cfm?an&ae=1&clientcode=33987ED0', target: "_blank") %></li>
+        <li><%= link_to('Request Medical Records', 'http://www.centralutahclinic.com/patient-resources/request-medical-records', target: "_blank") %></li>
+        <li><%= link_to('Central Utah Clinic Website', 'http://www.centralutahclinic.com/', target: "_blank") %></li>
       </ul>
     </li>
     <li><%= link_to("Contact Us", static_pages_contact_path) %></li> 
@@ -73,7 +74,7 @@
           435-635-9444</p>
         <p><b>Hours:</b><br/>
           8:00am - 6:00pm Mon - Sat</p>
-        <p><%= link_to(image_tag('facebook.png'), "https://www.facebook.com/Thefamilyclinic") %> <%= link_to(image_tag('twitter.png'), "https://twitter.com/tfclinic") %> <%= link_to(image_tag('youtube.png'), "http://www.youtube.com/user/thefamilyclinic?feature=watch") %></p>
+        <p><%= link_to(image_tag('facebook.png'), "https://www.facebook.com/Thefamilyclinic", target: "_blank") %> <%= link_to(image_tag('twitter.png'), "https://twitter.com/tfclinic", target: "_blank") %> <%= link_to(image_tag('youtube.png'), "http://www.youtube.com/user/thefamilyclinic?feature=watch", target: "_blank") %></p>
       </div>
     </div>
 

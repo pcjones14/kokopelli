@@ -11,11 +11,14 @@
   <p>Last name: <br/>
     <%= text_field_tag(:last, "", placeholder: "Tables") %></p>
 
-  <p>Address line 1: <br/>
-    <%= text_field_tag(:addr1, "", placeholder: "123 Fake Street") %></p>
+  <p>DOB <i>(format: MM/DD/YYYY):</i> <br/>
+    <%= text_field_tag(:dob, "", placeholder: "01/01/1980") %></p>
 
-  <p>Address line 2: <br/>
-    <%= text_field_tag(:addr2, "", placeholder: "Ste 1") %></p>
+  <p>Phone <i>(format: xxx-xxx-xxxx)</i>: <br/>
+    <%= text_field_tag(:phone, "", placeholder: "123-456-7890") %></p>
+
+  <p>Address: <br/>
+    <%= text_field_tag(:addr1, "", placeholder: "123 Fake Street") %></p>
 
   <p>City: <br/>
     <%= text_field_tag(:city, "", placeholder: "Nowhereville") %></p>
@@ -35,7 +38,7 @@
     <%= select_tag(:reason, options_for_select([['Need appointment'], ['Billing question'], ['Records request'], ['Patient feedback'], ['Contact office manager'], ['Other']])) %></p>
 
   <h3>Your message</h3>
-  <p><%= text_area_tag(:message, "", size: "5x12", class: "span8", placeholder: "enter your message here...") %></p>
+  <p><%= text_area_tag(:message, "", size: "5x12", class: "span12 aform", placeholder: "enter your message here...") %></p>
 
   <p><%= submit_tag "Submit form" %></p>
 
