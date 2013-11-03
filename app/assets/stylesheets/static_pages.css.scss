@@ -5,9 +5,20 @@
 @import 'bootstrap';
 @import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
 
+body {
+  background-color: #A69A76;
+}
+
 .container {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background-color: white;
+}
+
+.container-padding {
+  padding: 10px 20px;
+}
+
+.logo-margin {
+  margin-top: 10px;
 }
 
 a {
@@ -28,26 +39,28 @@ a:hover {
 
 .centered p {
   font-size: 3em;
-  margin-top: 40px;
+  margin-top: 30px;
   font-family: "Didact Gothic";
 }
 
-.translucent {
-  background-color: rgba(240, 240, 240, 0.6);
-  margin: 40px;
-  padding: 60px;
-  border-radius: 6px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
+.social-bar {
+  padding: 5px;
+  background-color: #666;
+  color: white;
 }
 
-.hero-unit {
-  background-image: image-url('banner.jpg');
-  padding: 20px;
+.social-bar p {
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 20px;
 }
 
-.hero-unit h1 {
-  font-size: 45px;
+.align-right {
+  text-align: right;
+}
+
+.float-left {
+  float: left;
 }
 
 .footer {

@@ -12,94 +12,107 @@
 <div class="container">
 
   <div class="row">
-    <div class="span3"><%= link_to(image_tag('logo.jpg', class: 'centered'), root_path) %></div>
-    <div class="span9 centered"><p>"Our family caring for your family"</p></div>
+    <div class="span12">
+      <div class="social-bar">
+        <div class="float-left">
+          <p>Call us! &rarr; 855-KOKO-NOW (855-565-6669)</p>
+        </div>
+        <div class="align-right">
+          <%= image_tag('facebook.png', width: 30) %>
+          <%= image_tag('twitter.png', width: 30) %>
+          <%= image_tag('linkedin.png', width: 30) %>
+          <%= image_tag('youtube.png', width: 30) %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <%= form_tag(front_search_path, class: 'pull-right', style: 'margin:0;padding:0;', method: 'get') do %>
-    <div class="input-append">
-      <input type="text" name="keyword" placeholder="search keywords..." style="margin:0;"/>
-      <button class="btn" type="submit">Go</button>
-    </div>
-  <% end %>
+  
 
-  <ul class="nav nav-tabs">
-    <li><%= link_to("Home", root_path) %></li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><%= link_to('Clinic Information', static_pages_clinic_information_path) %></li>
-        <li><%= link_to('Our Providers', static_pages_providers_path) %></li>
-        <li><%= link_to('Our Staff', static_pages_staff_path) %></li>
-      </ul>
-    </li>
-    <li class="dropdown <%= 'class="active"' if flash[:page] == "about"%>"><a class="dropdown-toggle" data-toggle="dropdown" href="#">News <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><%= link_to('All News', front_index_path) %></li>
-        <li><a href="/front/search?category=announcements">Announcements</a></li>
-        <li><a href="/front/search?category=local">Local</a></li>
-        <li><a href="/front/search?category=research">Research</a></li>
-      </ul>
-    </li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><%= link_to('Follow My Health', 'https://centralutahclinic.followmyhealth.com/', target: "_blank") %></li>
-        <li><%= link_to('Make a Payment', 'https://secure.modpay.com/vterm/vterm1.cfm?an&ae=1&clientcode=33987ED0', target: "_blank") %></li>
-        <li><%= link_to('Request Medical Records', 'http://www.centralutahclinic.com/patient-resources/request-medical-records', target: "_blank") %></li>
-        <li><%= link_to('Central Utah Clinic Website', 'http://www.centralutahclinic.com/', target: "_blank") %></li>
-      </ul>
-    </li>
-    <li><%= link_to("Contact Us", static_pages_contact_path) %></li> 
-    <% if session[:login] %>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Tools <b class="caret"></b></a>
+  <div class="row">
+    <div class="span12 centered logo-margin"><%= link_to(image_tag('koko2.png', class: 'centered'), root_path) %></div>
+  </div>
+
+  <div class="container-padding">
+
+    <%= form_tag(front_search_path, class: 'pull-right', style: 'margin:0;padding:0;', method: 'get') do %>
+      <div class="input-append">
+        <input type="text" name="keyword" placeholder="search keywords..." style="margin:0;"/>
+        <button class="btn" type="submit">Go</button>
+      </div>
+    <% end %>
+
+    <ul class="nav nav-tabs">
+      <li><%= link_to("Home", root_path) %></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><%= link_to('Articles', articles_path) %></li>
-          <li><%= link_to('New Article', new_article_path) %></li>
-          <li><%= link_to('Logout', users_destroy_session_path) %></li>
+          <li><%= link_to('Clinic Information', static_pages_clinic_information_path) %></li>
+          <li><%= link_to('Our Providers', static_pages_providers_path) %></li>
+          <li><%= link_to('Our Staff', static_pages_staff_path) %></li>
         </ul>
       </li>
-    <% end %>
-  </ul>
+      <li class="dropdown <%= 'class="active"' if flash[:page] == "about"%>"><a class="dropdown-toggle" data-toggle="dropdown" href="#">News <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to('All News', front_index_path) %></li>
+          <li><a href="/front/search?category=announcements">Announcements</a></li>
+          <li><a href="/front/search?category=local">Local</a></li>
+          <li><a href="/front/search?category=research">Research</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to('Follow My Health', 'https://centralutahclinic.followmyhealth.com/', target: "_blank") %></li>
+          <li><%= link_to('Make a Payment', 'https://secure.modpay.com/vterm/vterm1.cfm?an&ae=1&clientcode=33987ED0', target: "_blank") %></li>
+          <li><%= link_to('Request Medical Records', 'http://www.centralutahclinic.com/patient-resources/request-medical-records', target: "_blank") %></li>
+          <li><%= link_to('Central Utah Clinic Website', 'http://www.centralutahclinic.com/', target: "_blank") %></li>
+        </ul>
+      </li>
+      <li><%= link_to("Contact Us", static_pages_contact_path) %></li> 
+      <% if session[:login] %>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Tools <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to('Articles', articles_path) %></li>
+            <li><%= link_to('New Article', new_article_path) %></li>
+            <li><%= link_to('Logout', users_destroy_session_path) %></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
 
-  <%= yield %>
+    <%= yield %>
 
-  <hr />
+    <hr />
 
-  <div class="row footer">
+    <div class="row-fluid footer">
 
-    <div class="span4">
-      <div>
-        <p><b>The Family Clinic</b><br/>
-          11 South Main Street<br/>
-          Hurricane, Utah 84737<br/>
-          435-635-9444</p>
-        <p><b>Hours:</b><br/>
-          8:00am - 6:00pm Mon - Sat</p>
-        <p><%= link_to(image_tag('facebook.png'), "https://www.facebook.com/Thefamilyclinic", target: "_blank") %> <%= link_to(image_tag('twitter.png'), "https://twitter.com/tfclinic", target: "_blank") %> <%= link_to(image_tag('youtube.png'), "http://www.youtube.com/user/thefamilyclinic?feature=watch", target: "_blank") %></p>
+      <div class="span4">
+        <div>
+          footer box
+        </div>
       </div>
+
+      <div class="span4">
+        <div>
+          footer box
+        </div>
+      </div>
+
+      <div class="span4">
+        <div>
+          footer box
+        </div>
+      </div>
+
     </div>
 
-    <div class="span4">
-      <div>
-        <%= image_tag('map.jpg') %>
-      </div>
-    </div>
+    <hr />
 
-    <div class="span4">
-      <div>
-        <iframe width="300" height="215" src="http://www.youtube.com/embed/mL5TXGqPrIw" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
+    <footer>
+      <p>footer</p>
+      <p>footer</p>
+    </footer>
 
   </div>
-
-  <hr />
-
-  <footer>
-    <p class="muted">Copyright &copy;2007-2013 The Hurricane Family Clinic<%= link_to(".", users_login_path, style:"color:#999;") %> All Rights Reserved.</p>
-      <p><%= link_to("Privacy Practice", static_pages_privacy_practice_path) %> | <%= link_to("Privacy Policy", static_pages_privacy_policy_path) %> | <%= link_to("Terms of Use", static_pages_terms_of_use_path) %> | <%= link_to("Disclaimer", static_pages_disclaimer_path) %></p>
-    <p class="muted">Services provided in partership with:</p>
-    <p><%= link_to(image_tag("central_utah_clinic_logo.gif", size: "200x150"), "http://centralutahclinic.com/") %></p> 
-  </footer>
 
 </div>
 
