@@ -5,16 +5,35 @@
 <div class="main">
   <div class="article">
 
-    <h2 style="margin-bottom:0;"><%= @article.title %></h2>
-    <h5>by <%= @article.author %> <%= "#{@article.updated_at}"[0...-12] %> | category: <%= link_to(@article.category, front_search_path(category: @article.category)) %></h5>
+    <h2 style="margin-bottom:0;line-height:100%;"><%= @article.title %></h2>
+    <h5 style="line-height:100%;">by <%= @article.author %> | <%= "#{@article.updated_at}"[0...-12] %></h5>
+    <h5 style="line-height:100%;">category: <%= link_to(parse_keywords(@article.category), front_search_path(category: @article.category)) %></h5>
 
     <%= "<p style=\"text-align:center;\" class=\"img-rounded\">".html_safe + image_tag(@article.image.url) + "</p>".html_safe if !@article.image_file_name.nil? %>
 
     <%= "#{@article.body}".html_safe %>
 
+    <br/>
+
     <p><i>Keywords: <%= "#{tag_string}".html_safe %></i></p>
 
-    <%= link_to('&larr; back'.html_safe, :back) %>
+    <table>
+        <tr>
+            <td><div class="fb-share-button" data-href="http://kokosurance.com/front/show?id=18" data-type="button_count">olo</div></td>
+            <td><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></td>
+            <td><script src="//platform.linkedin.com/in.js" type="text/javascript">
+            lang: en_US
+            </script>
+            <script type="IN/Share" data-counter="right"></script>
+        </td></tr>
+    <br/><br/>
+
+    <p><%= link_to('&larr; back'.html_safe, :back) %></p>
+
+    <% if session[:login] %>
+        <p><%= link_to("View this article in the backend", article_path(id: @article.id)) %></p>
+    <% end %>
 
   </div>
 </div>

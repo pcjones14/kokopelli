@@ -7,16 +7,21 @@
 
     <div class="alert alert-info">You are currently in the backend</div>
 
-    <h2 style="margin-bottom:0;"><%= @article.title %></h2>
-    <h5>by <%= @article.author %> <%= "#{@article.updated_at}"[0...-12] %> | category: <%= link_to(@article.category, front_search_path(category: @article.category)) %></h5>
+    <h2 style="margin-bottom:0;line-height:100%;"><%= @article.title %></h2>
+    <h5 style="line-height:100%;">by <%= @article.author %> | <%= "#{@article.updated_at}"[0...-12] %></h5>
+    <h5 style="line-height:100%;">category: <%= link_to(parse_keywords(@article.category), front_search_path(category: @article.category)) %></h5>
 
     <%= "<p style=\"text-align:center;\" class=\"img-rounded\">".html_safe + image_tag(@article.image.url) + "</p>".html_safe if !@article.image_file_name.nil? %>
 
     <%= "#{@article.body}".html_safe %>
 
+    <br/>
+
     <p><i>Keywords: <%= "#{tag_string}".html_safe %></i></p>
 
     <p><i><%= link_to("Edit", edit_article_path(@article.id)) %></i> | <i><%= link_to("Delete", article_path, method: "delete") %></i></p>
+
+    <p><%= link_to("View this article in the frontend", front_show_path(id: @article.id)) %></p>
 
   </div>
 </div>

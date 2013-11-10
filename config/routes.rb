@@ -8,8 +8,8 @@ Family::Application.routes.draw do
   get "front/search"
   get "static_pages/index"
   get "static_pages/article"
-  get "static_pages/clinic_information"
-  get "static_pages/providers"
+  get "static_pages/mission"
+  get "static_pages/values"
   get "static_pages/staff"
   get "static_pages/privacy_practice"
   get "static_pages/privacy_policy"
@@ -17,6 +17,8 @@ Family::Application.routes.draw do
   get "static_pages/disclaimer"
   get "static_pages/contact"
   get "static_pages/legal"
+  get "static_pages/quote"
+  get "static_pages/newsletter"
 
   match "static_pages/contact" => "static_pages#submit_contact", :via => :post
 

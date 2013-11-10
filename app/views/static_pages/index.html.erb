@@ -3,7 +3,17 @@
   <%= "<div class=\"alert alert-success\">#{flash[:notice]}</div>".html_safe if flash[:notice] %>
   <%= "<div class=\"alert alert-error\">#{flash[:error]}</div>".html_safe if flash[:error] %>
 
-  <div style="margin:0 0 20px 20px;"><%= image_tag('banner' + (rand(5)+1).to_s + ".jpg") %></div>
+  <div style="margin:0 0 20px 20px;float:left;"><%= image_tag('banner.jpg') %></div>
+
+  <div class="contact_box">
+
+    <p style="font-size:220%;line-height:110%;">Something slogan motto.</p>
+
+    <p>Lorem ipsum dolor iset something lorem ipsum i like pie why am i typing this haha i need some sleep jafj kdjfak dhjfkhakjsdhf jkashdjkf hjka jks dfa sdjkfhjaksd fjkahdkhf kahk jdfhjkahsdjk hjkhkhk fd fasdfjak sdjfkaj ksjkdfjkfd jkafjk ja</p>
+
+    <button class="btn btn-large"><%= link_to("Get a Quote!", static_pages_quote_path, style: "color:black;") %></button>
+
+  </div>
 
 </div>
 
@@ -30,10 +40,10 @@
   </div>
 
   <div class="span4">
-    <h2>Latest News</h2>
+    <h2>Latest Articles</h2>
     <% @articles.each do |article| %>
-    <%= link_to("<h3 class=\"article-title\">#{article.title}</h3>".html_safe, front_show_path(id: article.id)) %>
-    <%= "<p>#{article.body}</p>"[0..247].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more", front_show_path(id: article.id)) %>
+      <h3 class="article-title"><%= link_to(article.title, front_show_path(id: article.id)) %></h3>
+      <p class="article-body"><%= "#{article.body}"[0..250].gsub("<p>", "").gsub("</p>", "<br>") %> [...] &larr; <%= link_to("Read more", front_show_path(id: article.id)) %></p>
     <% end %>
   </div>
 

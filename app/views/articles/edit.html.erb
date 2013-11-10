@@ -14,7 +14,7 @@
         <p>Author:<br/>
           <%= f.text_field :author %></p>
         <p>Category:<br/>
-          <%= f.select(:category, options_for_select([['announcements'], ['local'], ['research']])) %></p>
+          <%= f.select(:category, options_for_select([['life_insurance'], ['health_insurance'], ['financial_planning'], ['blog']])) %></p>
         <p>Body:<br/>
           <%= f.text_area :body, size: "80x20" %></p>
         <p>Keywords <i>(separate with commas)</i>:<br/>

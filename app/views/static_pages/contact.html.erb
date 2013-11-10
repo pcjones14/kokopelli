@@ -1,44 +1,45 @@
-<div class="contact">
+
+<div class="article">
   <h2>Contact Us</h2>
 
   <%= form_tag do %>
 
   <h3>Your Personal Info</h3>
 
-  <p>First name: <br/>
-    <%= text_field_tag(:first, "", placeholder: "Bobby") %></p>
+  <div class="row-fluid">
+    <div class="span4"><p>First name: <br/>
+    <%= text_field_tag(:first, "", placeholder: "Bobby") %></p></div>
 
-  <p>Last name: <br/>
-    <%= text_field_tag(:last, "", placeholder: "Tables") %></p>
+    <div class="span4"><p>Last name: <br/>
+    <%= text_field_tag(:last, "", placeholder: "Tables") %></p></div>
+  </div>
 
-  <p>DOB <i>(format: MM/DD/YYYY):</i> <br/>
-    <%= text_field_tag(:dob, "", placeholder: "01/01/1980") %></p>
+  <div class="row-fluid">
+    <div class="span4"><p>Phone <i>(format: xxx-xxx-xxxx)</i>: <br/>
+    <%= text_field_tag(:phone, "", placeholder: "123-456-7890") %></p></div>
 
-  <p>Phone <i>(format: xxx-xxx-xxxx)</i>: <br/>
-    <%= text_field_tag(:phone, "", placeholder: "123-456-7890") %></p>
+    <div class="span4"><p>Email: <br/>
+    <%= text_field_tag(:email, "", placeholder: "bobby@kokosurance.com") %></p></div>
+  </div>
 
-  <p>Address: <br/>
-    <%= text_field_tag(:addr1, "", placeholder: "123 Fake Street") %></p>
+  <div class="row-fluid">
+    <div class="span4"><p>Address: <br/>
+      <%= text_field_tag(:addr1, "", placeholder: "123 Fake Street") %></p></div>
 
-  <p>City: <br/>
-    <%= text_field_tag(:city, "", placeholder: "Nowhereville") %></p>
+    <div class="span4"><p>City: <br/>
+      <%= text_field_tag(:city, "", placeholder: "Nowhereville") %></p></div>
+  </div>
 
-  <p>State: <br/>
-    <%= text_field_tag(:state, "", placeholder: "UT") %></p>
+  <div class="row-fluid">
+    <div class="span4"><p>State: <br/>
+      <%= text_field_tag(:state, "", placeholder: "UT") %></p></div>
 
-  <p>ZIP code: <br/>
-    <%= text_field_tag(:zip, "", placeholder: "12345") %></p>
-
-  <p>Email: <br/>
-    <%= text_field_tag(:email, "", placeholder: "bobby@thefamilyclinic.com") %></p>
-
-  <h3>Contact Reason</h3>
-
-  <p>The reason for your contact is: <br/>
-    <%= select_tag(:reason, options_for_select([['Need appointment'], ['Billing question'], ['Records request'], ['Patient feedback'], ['Contact office manager'], ['Other']])) %></p>
+    <div class="span4"><p>ZIP code: <br/>
+      <%= text_field_tag(:zip, "", placeholder: "12345") %></p></div>
+  </div>
 
   <h3>Your message</h3>
-  <p><%= text_area_tag(:message, "", size: "5x12", class: "span12 aform", placeholder: "enter your message here...") %></p>
+  <p><%= text_area_tag(:message, "", size: "5x10", class: "span11 aform", placeholder: "enter your message here...") %></p>
 
   <p><%= submit_tag "Submit form" %></p>
 

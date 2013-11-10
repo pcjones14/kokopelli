@@ -4,12 +4,13 @@
     <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
     <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
 
-    <h1>Listing all articles</h1>
+    <h1>Learning Center</h1>
 
     <% @articles.each do |article| %>
       <% if article.visible %>
-        <h2><%= link_to(article.title, front_show_path(id: article.id)) %></h2>
-        <h5>by <%= article.author %> <%= "#{article.updated_at}"[0...-12] %> | category: <%= link_to(article.category, front_search_path(category: article.category)) %></h5>
+        <h2 style="line-height:100%;"><%= link_to(article.title, front_show_path(id: article.id)) %></h2>
+        <h5 style="line-height:100%;">by <%= article.author %> | <%= "#{article.updated_at}"[0...-12] %></h5>
+        <h5 style="line-height:100%;">category: <%= link_to(parse_keywords(article.category), front_search_path(category: article.category)) %></h5>
         <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, front_show_path(id: article.id)) %>
         <hr />
       <% end %>
