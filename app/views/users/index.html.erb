@@ -1,0 +1,10 @@
+<%= "<p class=\"alert alert-success\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+<%= "<p class=\"alert alert-error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+
+<h2>Showing all users</h2>
+<table border="1" class="user_table">
+	<tr><th>email</th><th>name</th><th>edit</th><th>destroy</th></tr>
+	<% @users.each do |user| %>
+		<tr><td><%= user.email %></td><td><%= user.name %></td><td><%= link_to("edit", "#") %></td><td><%= link_to("Delete", user_path(user.id), method: "delete") %></td></tr>
+	<% end %>
+</table>

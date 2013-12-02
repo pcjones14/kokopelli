@@ -6,11 +6,10 @@
 #  username: payton
 
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: pg_test
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
-  username: payton
+  timeout: 5000
 
 development:
   adapter: sqlite3

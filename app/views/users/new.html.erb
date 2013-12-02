@@ -1,0 +1,15 @@
+<%= form_tag({controller: "users", action: "create"}, {method: "post", multipart: true}) do %>
+	<div class="aform">
+		<p>Name:<br/>
+			<%= text_field_tag :name %></p>
+		<p>Email:<br/>
+			<%= text_field_tag :email %></p>
+		<p>Password:<br/>
+			<%= password_field_tag :password %></p>
+		<p>Bio:</br>
+			<%= text_area_tag :bio, nil, rows:10, cols: 80 %></p>
+		<p>Avatar (100 x 100 px)<br/>
+			<%= file_field_tag :avatar %></p>
+		<p><%= submit_tag %></p>
+	</div>
+<% end %>

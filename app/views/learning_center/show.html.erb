@@ -1,0 +1,45 @@
+<% tag_string = "" %>
+<% @tags.each {|tag| tag_string += link_to(tag, learning_center_search_path(keyword: tag)) + ", "} %>
+<% tag_string = tag_string[0...-2] %>
+
+<div class="main">
+  <div class="article">
+
+    <h2 style="margin-bottom:0;line-height:100%;"><%= @article.title %></h2>
+    <h5 style="line-height:100%;">by <%= User.find(@article.user_id).name %> | <%= "#{@article.updated_at}"[0...-12] %></h5>
+    <h5 style="line-height:100%;">category: <%= link_to(parse_keywords(@article.category), learning_center_search_path(category: @article.category)) %></h5>
+
+    <%= "<p style=\"text-align:center;\" class=\"img-rounded\">".html_safe + image_tag(@article.image.url) + "</p>".html_safe if !@article.image_file_name.nil? %>
+
+    <%= "#{@article.body}".html_safe %>
+
+    <div class="bio">
+        <p style="float:left;margin-right:0px;"><img class="img-polaroid" src="http://fillmurray.com/g/80/80" /></p><h3 style="margin:0;padding:0;"><%= User.find(@article.user_id).name %></h3><p><%= User.find(@article.user_id).bio %></p>
+    </div>
+
+    <div class="social-table">
+        <div class="social-button">
+            <div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
+        </div>
+        <div class="social-button">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this site, dood" data-dnt="true">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div class="social-button linkedin">
+            <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+            <script type="IN/Share" data-counter="right"></script>
+        </div>
+
+        <div style="clear:both;">&nbsp;</div>
+    </div>
+
+    <p><i>Keywords: <%= "#{tag_string}".html_safe %></i></p>
+
+    <p><%= link_to('&larr; back'.html_safe, :back) %></p>
+
+    <% if session[:login] %>
+        <p><%= link_to("View this article in the backend", article_path(id: @article.id)) %></p>
+    <% end %>
+
+  </div>
+</div>

@@ -1,5 +1,47 @@
 class UsersController < ApplicationController
   require 'digest/md5'
+  include ApplicationHelper
+
+  def index
+    @users = User.all
+  end
+
+  def show
+    
+  end
+
+  def new
+
+  end
+
+  def create
+    user = User.create(email: params[:email], name: params[:name], password: Digest::MD5.hexdigest(params[:password]), bio: params[:bio], avatar: params[:avatar])
+    if user.valid?
+      flash[:notice] = "User successfully created."
+      redirect_to users_path
+    else
+      flash[:error] = "The following errors occurred: "
+      user.errors.each do |field,error|
+        flash[:error] += "#{field} #{error}, "
+      end
+      flash[:error] = flash[:error][0...-2]
+      redirect_to :back
+    end
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+    User.destroy(params[:id])
+    flash[:notice] = "User successfully destroyed."
+    redirect_to users_path
+  end
 
   def login
     if session[:login] == true
@@ -9,17 +51,19 @@ class UsersController < ApplicationController
   end
 
   def login_attempt
-    if params[:email] == "rcarter@kokosurance.com" and Digest::MD5.hexdigest(params[:password]) == "5f4dcc3b5aa765d61d8327deb882cf99"
-      session[:login] = true
-      flash[:notice] = "Successfully logged in."
-      redirect_to articles_path
+    if user = User.find_by_email(params[:email])
+      if Digest::MD5.hexdigest(params[:password]) == user.password
+        session[:login] = true
+        flash[:notice] = "Successfully logged in."
+        redirect_to articles_path
+      else
+        flash[:error] = "Incorrect email or password. Please try again."
+        redirect_to :back
+      end
     else
-      flash[:error] = "Login failed. Please try again."
+      flash[:error] = "Incorrect email or password. Please try again."
       redirect_to :back
     end
-  end
-
-  def edit
   end
 
   def destroy_session

@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="article">
+
+    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+
+    <div class="learning">
+      <h1>Learning Center</h1>
+      <p>Lorem ipsum dolor isset asdfjak sdjfkasd jfkasd jfklasdj fkad jfklasdlf jasj fkalsjd fasklf kalsjfkasdj kfj askldf jkasldfj ksadjfklasdj fkasdklfj lkasdjfklasdjfkladsjklfjasd klfjksadljfklds fjadls f ljkasdflkj asdjf klajdskfl askldjf klasjdfk asdjkfl asjdf laksfj lasjflkasj dlkfj alkdf jklasjdf asld fadsf asdjfkdlasjf klasdj fklasjdfjds kalfj dksf jakdjf kasdj fkajd fjaksd fkaldsj fklajsd fklasjdfk adsfj asldf jkjkfds.</p>
+    </div>
+
+    <div class="row-fluid" style="margin-top:20px;">
+      <div class="span2">
+        <p><b>Categories:</b></p>
+        <p><a href="/learning_center/search?category=life_insurance">Life Insurance</a></p>
+        <p><a href="/learning_center/search?category=health_insurance">Health Insurance</a></p>
+        <p><a href="/learning_center/search?category=financial_planning">Financial Planning</a></p>
+        <hr/>
+        <p><b>Common tags:</b></p>
+        <p><a href="/learning_center/search?category=life_insurance">Lorem</a></p>
+        <p><a href="/learning_center/search?category=life_insurance">Ipsum</a></p>
+        <p><a href="/learning_center/search?category=life_insurance">Dolor</a></p>
+        <p><a href="/learning_center/search?category=life_insurance">Sit</a></p>
+        <p><a href="/learning_center/search?category=life_insurance">Amet</a></p>
+        <p><a href="/learning_center/search?category=life_insurance">Consectetur</a></p>
+        <p><a href="/learning_center/search?category=life_insurance">Adipiscing</a></p>
+      </div>
+      <div class="span10">
+        <% count = 1 %>
+        <% @articles.each do |article| %>
+          <% if article.visible %>
+            <%= "<hr/>".html_safe if count != 1 %>
+            <h2 style="line-height:100%;"><%= link_to(article.title, learning_center_show_path(id: article.id)) %></h2>
+            <h5 style="line-height:100%;">by <%= User.find(article.user_id).name %> | <%= "#{article.updated_at}"[0...-12] %></h5>
+            <h5 style="line-height:100%;">category: <%= link_to(parse_keywords(article.category), learning_center_search_path(category: article.category)) %></h5>
+            <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(id: article.id)) %>
+            <% count = count + 1 %>
+          <% end %>
+        <% end %>
+      </div>
+
+    <div class="centered pagination"><%= paginate @articles %></div>
+
+  </div>
+</div>

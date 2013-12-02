@@ -1,8 +1,8 @@
 <div class="main">
   <div class="article">
 
-    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
-    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+    <%= "<p class=\"alert alert-notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"alert alert-error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
 
     <%= form_tag do %>
       <h2>Login to the backend of the site:</h2>

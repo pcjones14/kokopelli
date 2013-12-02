@@ -12,9 +12,9 @@
         <p>Title:<br/>
           <%= text_field_tag(:title) %></p>
         <p>Author:<br/>
-          <%= text_field_tag :author %></p>
+          <%= select_tag(:user_id, options_for_select(@options)) %></p>
         <p>Category:<br/>
-          <%= select_tag(:category, options_for_select([['life_insurance'], ['health_insurance'], ['financial_planning'], ['blog']])) %></p>
+          <%= select_tag(:category, options_for_select([['Life Insurance', 'life_insurance'], ['Health Insurance', 'health_insurance'], ['Financial Planning', 'financial_planning'], ['Blog', 'blog']])) %></p>
         <p>Body:<br/>
           <%= text_area_tag(:body, nil, rows: 20, cols: 80) %></p>
         <p>Keywords <i>(separate with commas)</i>:<br/>

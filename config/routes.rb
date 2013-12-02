@@ -1,11 +1,8 @@
 Family::Application.routes.draw do
 
-  get "users/login"
-  get "users/edit"
-  get "users/destroy_session"
-  get "front/index"
-  get "front/show"
-  get "front/search"
+  get "learning_center/index"
+  get "learning_center/show"
+  get "learning_center/search"
   get "static_pages/index"
   get "static_pages/article"
   get "static_pages/mission"
@@ -22,12 +19,20 @@ Family::Application.routes.draw do
 
   match "static_pages/contact" => "static_pages#submit_contact", :via => :post
 
-  match "users/login" => "users#login_attempt", :via => :post
-  match "login" => "users#login"
-
   get "articles/delete_image"
   get "articles/delete_promo"
+
   resources :articles
+
+  get "users/index"
+
+  resources :users
+
+  get "users/login"
+  get "users/destroy_session"
+
+  match "users/login" => "users#login_attempt", :via => :post
+  match "login" => "users#login"
 
   root :to => 'static_pages#index'
 

@@ -1,4 +1,4 @@
-class FrontController < ApplicationController
+class LearningCenterController < ApplicationController
   include ApplicationHelper
   def index
     @articles = Article.where(visible: true).where("category != 'blog'").order('updated_at DESC').page params[:page]

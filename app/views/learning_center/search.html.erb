@@ -1,0 +1,20 @@
+<div class="main">
+  <div class="article">
+
+    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+
+    <h2>Listing articles <%= @string %></h2>
+
+    <% @articles.each do |article| %>
+      <% if article.visible %>
+        <h2><%= link_to(article.title, learning_center_show_path(id: article.id)) %></h2>
+        <h5>by <%= article.author %> <%= "#{article.updated_at}"[0...-12] %> | category: <%= link_to(parse_keywords(article.category), learning_center_search_path(category: article.category)) %></h5>
+        <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(id: article.id)) %>
+      <% end %>
+    <% end %>
+
+    <div class="centered"><%= paginate @articles %></div>
+
+  </div>
+</div>

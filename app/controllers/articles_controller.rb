@@ -14,11 +14,16 @@ class ArticlesController < ApplicationController
 
   def new
     authenticate
+    users = User.all
+    @options = []
+    users.each do |user|
+      @options += [[user.name, user.id]]
+    end
   end
 
   def create
     authenticate
-    article = Article.create(title: params[:title], body: params[:body], tags: params[:tags], visible: params[:visible], promo: params[:promo], image: params[:image], category: params[:category])
+    article = Article.create(title: params[:title], body: params[:body], tags: params[:tags], visible: params[:visible], promo: params[:promo], image: params[:image], category: params[:category], user_id: params[:user_id])
     if article.valid?
       flash[:notice] = "Article successfully created."
       redirect_to articles_path
@@ -35,6 +40,11 @@ class ArticlesController < ApplicationController
   def edit
     authenticate
     @article = Article.find(params[:id])
+    users = User.all
+    @options = []
+    users.each do |user|
+      @options += [[user.name, user.id]]
+    end
   end
 
   def update

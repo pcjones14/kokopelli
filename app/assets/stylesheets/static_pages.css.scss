@@ -192,6 +192,26 @@ footer {
   font-size: 80%;
 }
 
+.social-table {
+  padding-top: 20px;
+}
+
+.social-button {
+  float: left;
+  margin-right: 10px;
+}
+
+.linkedin {
+  margin-left: -30px;
+}
+
+.bio {
+  background-color: #CCC;
+  border: 1px solid black;
+  padding: 15px;
+  margin-top: 10px;
+}
+
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
 .dropdown-submenu:hover > a,
