@@ -14,7 +14,14 @@
     <%= "#{@article.body}".html_safe %>
 
     <div class="bio">
-        <p style="float:left;margin-right:0px;"><img class="img-polaroid" src="http://fillmurray.com/g/80/80" /></p><h3 style="margin:0;padding:0;"><%= User.find(@article.user_id).name %></h3><p><%= User.find(@article.user_id).bio %></p>
+        <p style="float:left;margin-right:0px;">
+            <% if User.find(@article.user_id).avatar == nil %>
+                <img class="img-polaroid" src="http://fillmurray.com/g/80/80" />
+            <% else %>
+                <%= image_tag(User.find(@article.user_id).avatar, class: "img-polaroid") %>
+            <% end %>
+        </p>
+        <h3 style="margin:0;padding:0;"><%= User.find(@article.user_id).name %></h3><p><%= "#{User.find(@article.user_id).bio}".html_safe %></p>
     </div>
 
     <div class="social-table">

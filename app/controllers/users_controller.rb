@@ -30,16 +30,28 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:id])
   end
 
   def update
-
+    user = User.find(params[:id])
+    user.update_attributes(params[:user])
+    if user.valid?
+      flash[:notice] = "User successfully updated."
+      redirect_to users_path
+    else
+      flash[:error] = "The following errors occurred: "
+      user.errors.each do |field,error|
+        flash[:error] += "#{field} #{error}, "
+      end
+      flash[:error] = flash[:error][0...-2]
+      redirect_to :back
+    end
   end
 
   def destroy
     User.destroy(params[:id])
-    flash[:notice] = "User successfully destroyed."
+    flash[:notice] = "User successfully deleted."
     redirect_to users_path
   end
 
@@ -71,4 +83,26 @@ class UsersController < ApplicationController
     flash[:notice] = "Successfully logged out."
     redirect_to root_path
   end
+
+  def update_password
+    if Digest::MD5.hexdigest(params[:old_password]) != User.find(params[:id]).password
+      flash[:error] = "Old password does not match. Please enter old password again."
+      redirect_to :back
+    elsif params[:new_password].blank?
+      flash[:error] = "New password field empty. Please enter a new password."
+      redirect_to :back
+    elsif params[:new_password] != params[:new_password_verify]
+      flash[:error] = "Passwords do not match. Please enter passwords again."
+      redirect_to :back
+    else
+      if User.find(params[:id]).update_attributes(password: Digest::MD5.hexdigest(params[:new_password]))
+        flash[:notice] = "User password edited successfully."
+        redirect_to edit_user_path(params[:id])
+      else
+        flash[:error] = "FATAL DATABASE ERROR"
+        redirect_to :back
+      end
+    end
+  end
+
 end

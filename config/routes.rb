@@ -25,17 +25,18 @@ Family::Application.routes.draw do
   resources :articles
 
   get "users/index"
-
-  resources :users
-
   get "users/login"
   get "users/destroy_session"
+  get "users/edit_password"
+  post "users/update_password"
+
+  resources :users
 
   match "users/login" => "users#login_attempt", :via => :post
   match "login" => "users#login"
 
   root :to => 'static_pages#index'
 
-  match '*a', :to => 'errors#routing'
+  # match '*a', :to => 'errors#routing'
 
 end
