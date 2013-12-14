@@ -5,8 +5,13 @@ class LearningCenterController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
-    @tags = @article.tags.split(",")
+    begin
+      @article = Article.find(params[:id])
+      @tags = @article.tags.split(",")
+    rescue
+      flash[:error] = "Article with that id was not found"
+      redirect_to learning_center_index_path
+    end
   end
 
   def search

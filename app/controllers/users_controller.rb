@@ -3,18 +3,20 @@ class UsersController < ApplicationController
   include ApplicationHelper
 
   def index
+    authenticate
     @users = User.all
   end
 
   def show
-    
+    authenticate
   end
 
   def new
-
+    authenticate
   end
 
   def create
+    authenticate
     user = User.create(email: params[:email], name: params[:name], password: Digest::MD5.hexdigest(params[:password]), bio: params[:bio], avatar: params[:avatar])
     if user.valid?
       flash[:notice] = "User successfully created."
@@ -30,10 +32,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    authenticate
     @user = User.find(params[:id])
   end
 
   def update
+    authenticate
     user = User.find(params[:id])
     user.update_attributes(params[:user])
     if user.valid?
@@ -50,6 +54,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    authenticate
     User.destroy(params[:id])
     flash[:notice] = "User successfully deleted."
     redirect_to users_path
@@ -85,6 +90,7 @@ class UsersController < ApplicationController
   end
 
   def update_password
+    authenticate
     if Digest::MD5.hexdigest(params[:old_password]) != User.find(params[:id]).password
       flash[:error] = "Old password does not match. Please enter old password again."
       redirect_to :back

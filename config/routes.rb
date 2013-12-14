@@ -1,4 +1,6 @@
-Family::Application.routes.draw do
+Family::Application.routes.draw do 
+
+  match "learning_center/show.:id", to: 'learning_center#show'
 
   get "learning_center/index"
   get "learning_center/show"

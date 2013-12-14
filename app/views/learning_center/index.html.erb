@@ -1,8 +1,8 @@
 <div class="main">
   <div class="article">
 
-    <%= "<p class=\"notice\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
-    <%= "<p class=\"error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
+    <%= "<p class=\"alert alert-success\">#{flash[:notice]}</p>".html_safe if flash[:notice] %>
+    <%= "<p class=\"alert alert-error\">#{flash[:error]}</p>".html_safe if flash[:error] %>
 
     <div class="learning">
       <h1>Learning Center</h1>
@@ -30,10 +30,10 @@
         <% @articles.each do |article| %>
           <% if article.visible %>
             <%= "<hr/>".html_safe if count != 1 %>
-            <h2 style="line-height:100%;"><%= link_to(article.title, learning_center_show_path(id: article.id)) %></h2>
+            <h2 style="line-height:100%;"><%= link_to(article.title, learning_center_show_path(article.id, title: article.title.parameterize)) %></h2>
             <h5 style="line-height:100%;">by <%= User.find(article.user_id).name %> | <%= "#{article.updated_at}"[0...-12] %></h5>
             <h5 style="line-height:100%;">category: <%= link_to(parse_keywords(article.category), learning_center_search_path(category: article.category)) %></h5>
-            <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(id: article.id)) %>
+            <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(article.id, title: article.title.parameterize)) %>
             <% count = count + 1 %>
           <% end %>
         <% end %>

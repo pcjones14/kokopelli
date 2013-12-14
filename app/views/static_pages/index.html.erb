@@ -25,7 +25,6 @@
       <div class="row-fluid">
         <% if !@promos.empty? %>
           <div class="span6">
-            <p><%= link_to(image_tag(@promos[0].promo.url, class: 'img-rounded'), learning_center_show_path(id: @promos[0])) %></p>
             <p><%= link_to(image_tag(@promos[1].promo.url, class: 'img-rounded'), learning_center_show_path(id: @promos[1])) if @promos[1] %></p>
           </div>
           <div class="span6">
@@ -42,8 +41,8 @@
   <div class="span4">
     <h2>Latest Articles</h2>
     <% @articles.each do |article| %>
-      <h3 class="article-title"><%= link_to(article.title, learning_center_show_path(id: article.id)) %></h3>
-      <p class="article-body"><%= sanitize("#{article.body}"[0..250].gsub("<p>", "").gsub("</p>", "<br>")) %> [...] &larr; <%= link_to("Read more", learning_center_show_path(id: article.id)) %></p>
+      <h3 class="article-title"><%= link_to(article.title, learning_center_show_path(article.id, title: article.title)) %></h3>
+      <p class="article-body"><%= sanitize("#{article.body}"[0..250].gsub("<p>", "").gsub("</p>", "<br>")) %> [...] &larr; <%= link_to("Read more", learning_center_show_path(article.id, title: article.title)) %></p>
     <% end %>
   </div>
 
