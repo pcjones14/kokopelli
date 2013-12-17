@@ -41,6 +41,12 @@ class StaticController < ApplicationController
   def contact
   end
 
+  def submit_contact
+    ActionMailer::Base.mail(:from => "admin@kokosurance.com", :to => "rcarter@kokosurance.com", :subject => "Contact request for #{params[:first]} #{params[:last]}", :body => "Name: " + params[:first] + " " + params[:last] + "\nEmail: " + params[:email] + "\nPhone: " + params[:phone] + "\nAddress" + params[:addr1] + "\nCity, State, Zip: " + params[:city] + ", " + params[:state] + params[:zip] + "\nMessage: " + params[:message]).deliver
+    flash[:notice] = "Message successfully delivered"
+    redirect_to :root
+  end
+
   def legal
   end
 
