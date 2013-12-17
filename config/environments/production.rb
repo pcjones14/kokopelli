@@ -73,11 +73,10 @@ Family::Application.configure do
     :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,      
     :ssl => true,
     :enable_starttls_auto => true,  #this is the important stuff!
-    :address        => 'smtp.gmail.com',
-    :port           => 465,
-    :domain         => 'gmail.com',
+    :address        => 'smtp.mailgun.org',
+    :port           => 587,
     :authentication => :plain,
-    :user_name      => 'kokosurancequote@gmail.com',
-    :password       => 'giggles63'
+    :user_name      => 'postmaster@kokosurance.com',
+    :password       => '1zi4z8qhuk55'
   }
 end
