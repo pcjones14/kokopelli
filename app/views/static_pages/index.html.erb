@@ -25,6 +25,7 @@
       <div class="row-fluid">
         <% if !@promos.empty? %>
           <div class="span6">
+            <p><%= link_to(image_tag(@promos[0].promo.url, class: 'img-rounded'), learning_center_show_path(id: @promos[0])) if @promos[0] %></p>
             <p><%= link_to(image_tag(@promos[1].promo.url, class: 'img-rounded'), learning_center_show_path(id: @promos[1])) if @promos[1] %></p>
           </div>
           <div class="span6">

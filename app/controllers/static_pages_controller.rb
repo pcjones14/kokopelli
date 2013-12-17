@@ -3,6 +3,11 @@ class StaticPagesController < ApplicationController
   def index
     @articles = Article.where("category != 'blog'").order("updated_at DESC").limit(3)
     @promos = Article.where("promo_file_name <> 'nil'").order("updated_at DESC").limit(4)
+    puts
+    puts
+    puts @promos
+    puts
+    puts
     flash.now[:page] = "home"
   end
 
