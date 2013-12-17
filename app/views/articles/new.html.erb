@@ -16,6 +16,11 @@
         <p>Category:<br/>
           <%= select_tag(:category, options_for_select([['Life Insurance', 'life_insurance'], ['Health Insurance', 'health_insurance'], ['Financial Planning', 'financial_planning'], ['Blog', 'blog']])) %></p>
         <p>Body:<br/>
+          paragraphs: &lt;p&gt;...&lt;/p&gt;<br/>
+          bold: &lt;b&gt;...&lt;/b&gt;<br/>
+          italics: &lt;i&gt;...&lt;/i&gt;<br/>
+          headers: &lt;h1 (or h2, h3... h6)&gt;...&lt;/h1&gt;<br/>
+          line break: &lt;br /&gt;</i><br/><br/>
           <%= text_area_tag(:body, nil, rows: 20, cols: 80) %></p>
         <p>Keywords <i>(separate with commas)</i>:<br/>
           <%= text_field_tag(:tags) %></p>
