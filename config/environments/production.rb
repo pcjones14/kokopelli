@@ -77,7 +77,7 @@ Family::Application.configure do
     :port           => 465,
     :domain         => 'gmail.com',
     :authentication => :plain,
-    :user_name      => 'byukid14@gmail.com',
-    :password       => '79bratts'
+    :user_name      => 'kokosurancequote@gmail.com',
+    :password       => 'giggles63'
   }
 end
