@@ -8,6 +8,9 @@ class StaticPagesController < ApplicationController
 
   def article
   end
+
+  def insurance_companies
+  end
   
   def clinic_information
   end
