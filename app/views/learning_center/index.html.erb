@@ -30,7 +30,7 @@
             <h2 style="line-height:100%;"><%= link_to(article.title, learning_center_show_path(article.id, title: article.title.parameterize)) %></h2>
             <h5 style="line-height:100%;">by <%= User.find(article.user_id).name %> | <%= "#{article.updated_at}"[0...-12] %></h5>
             <h5 style="line-height:100%;">category: <%= link_to(parse_keywords(article.category), learning_center_search_path(category: article.category)) %></h5>
-            <%= sanitize("#{article.body}"[0..500].html_safe, tags: %w(p) + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(article.id, title: article.title.parameterize)) %>
+            <%= sanitize("#{article.body}"[0..500].html_safe, tags: %w(p)) + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(article.id, title: article.title.parameterize)) %>
             <% count = count + 1 %>
           <% end %>
         <% end %>
