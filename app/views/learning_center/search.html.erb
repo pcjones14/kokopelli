@@ -10,7 +10,7 @@
       <% if article.visible %>
         <h2><%= link_to(article.title, learning_center_show_path(article.id, title: article.title.parameterize)) %></h2>
         <h5>by <%= User.find(article.user_id).name %> <%= "#{article.updated_at}"[0...-12] %> | category: <%= link_to(parse_keywords(article.category), learning_center_search_path(category: article.category)) %></h5>
-        <%= "#{article.body}"[0..500].html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(article.id, title: article.title.parameterize)) %>
+        <%= "#{article.body}"[0..500].html_safe + "</p>".html_safe + " [. . .] &larr; ".html_safe + link_to("Read more</p>".html_safe, learning_center_show_path(article.id, title: article.title.parameterize)) %>
       <% end %>
     <% end %>
 
