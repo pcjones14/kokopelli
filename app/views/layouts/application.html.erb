@@ -20,6 +20,7 @@
     ga('create', 'UA-46144752-1', 'kokopelliinsurance.com');
     ga('send', 'pageview');
   </script>
+  <meta name="google-site-verification" content="Ugzf18ylQRcwK0XA2P56Eq3WgRVsHAPfUrF2eQxEMRA" />
 
 </head>
 <body>
@@ -70,9 +71,9 @@
       <li><%= link_to("Home", root_path) %></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><%= link_to('Our Staff', static_pages_staff_path) %></li>
-          <li><%= link_to('Our Mission', static_pages_mission_path) %></li>
-          <li><%= link_to('Our Values', static_pages_values_path) %></li>
+          <li><%= link_to('Our Staff', static_staff_path) %></li>
+          <li><%= link_to('Our Mission', static_mission_path) %></li>
+          <li><%= link_to('Our Values', static_values_path) %></li>
         </ul>
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Insurance Products <b class="caret"></b></a>
@@ -97,9 +98,9 @@
       <li><a href="/learning_center/search?category=blog">Blog</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Us <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><%= link_to('General Contact', static_pages_contact_path) %></li>
-          <li><%= link_to('Get a Quote', static_pages_quote_path) %></li>
-          <li><%= link_to('Newsletter Sign-up', static_pages_newsletter_path) %></li>
+          <li><%= link_to('General Contact', static_contact_path) %></li>
+          <li><%= link_to('Get a Quote', static_quote_path) %></li>
+          <li><%= link_to('Newsletter Sign-up', static_newsletter_path) %></li>
         </ul>
       </li> 
       <% if session[:login] %>
@@ -155,10 +156,10 @@
       <div class="span2">
         <div>
           <b>Service Center</b></br>
-          <%= link_to("Contact Us", static_pages_contact_path) %></br>
-          <%= link_to("Get a Quote", static_pages_quote_path) %></br>
+          <%= link_to("Contact Us", static_contact_path) %></br>
+          <%= link_to("Get a Quote", static_quote_path) %></br>
           <%= link_to("Learning Center", learning_center_index_path) %></br>
-          <%= link_to("Newsletter Sign-up", static_pages_newsletter_path) %></br>
+          <%= link_to("Newsletter Sign-up", static_newsletter_path) %></br>
         </div>
       </div>
 
@@ -179,7 +180,7 @@
 
     <footer>
       <p>Copyright &copy;<%= Time.now.year %> Kokopelli Insurance. All Rights Reserved.</p>
-      <p><%= link_to("Privacy Policy", static_pages_privacy_policy_path) %> | <%= link_to("Terms of Use", static_pages_terms_of_use_path) %></p>
+      <p><%= link_to("Privacy Policy", static_privacy_policy_path) %> | <%= link_to("Terms of Use", static_terms_of_use_path) %></p>
       <p><p>Call us anytime at 855-KOKO-NOW (855-565-6669)</p>
     </footer>
 

@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationController
+class StaticController < ApplicationController
 
   def index
     @articles = Article.where("category != 'blog'").order("updated_at DESC").limit(3)

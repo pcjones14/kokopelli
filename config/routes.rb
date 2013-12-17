@@ -5,21 +5,21 @@ Family::Application.routes.draw do
   get "learning_center/index"
   get "learning_center/show"
   get "learning_center/search"
-  get "static_pages/index"
-  get "static_pages/article"
-  get "static_pages/mission"
-  get "static_pages/values"
-  get "static_pages/staff"
-  get "static_pages/privacy_practice"
-  get "static_pages/privacy_policy"
-  get "static_pages/terms_of_use"
-  get "static_pages/disclaimer"
-  get "static_pages/contact"
-  get "static_pages/legal"
-  get "static_pages/quote"
-  get "static_pages/newsletter"
+  get "static/index"
+  get "static/article"
+  get "static/mission"
+  get "static/values"
+  get "static/staff"
+  get "static/privacy_practice"
+  get "static/privacy_policy"
+  get "static/terms_of_use"
+  get "static/disclaimer"
+  get "static/contact"
+  get "static/legal"
+  get "static/quote"
+  get "static/newsletter"
 
-  match "static_pages/contact" => "static_pages#submit_contact", :via => :post
+  match "static/contact" => "static#submit_contact", :via => :post
 
   get "articles/delete_image"
   get "articles/delete_promo"
@@ -37,7 +37,7 @@ Family::Application.routes.draw do
   match "users/login" => "users#login_attempt", :via => :post
   match "login" => "users#login"
 
-  root :to => 'static_pages#index'
+  root :to => 'static#index'
 
   # match '*a', :to => 'errors#routing'
 
