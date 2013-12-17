@@ -2,6 +2,8 @@
 <% @tags.each {|tag| tag_string += link_to(tag, learning_center_search_path(keyword: tag)) + ", "} %>
 <% tag_string = tag_string[0...-2] %>
 
+<% content_for :title, @article.title %>
+
 <div class="main">
   <div class="article">
 
