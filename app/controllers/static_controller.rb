@@ -48,7 +48,7 @@ class StaticController < ApplicationController
   end
 
   def submit_quote
-    ActionMailer::Base.mail(:from => "postmaster@kokosurance.com", :to => "paytoncarter14@gmail.com", :subject => "Quote request for #{params[:first]} #{params[:last]}", :body => "Name: " + params[:first] + " " + params[:last] + "\nEmail: " + params[:email] + "\nPhone: " + params[:phone] + "\nAddress: " + params[:addr1] + "\nCity, State, Zip: " + params[:city] + ", " + params[:state] + " " + params[:zip] + "\nProducts: " + params[:products] + "\nMessage: " + params[:message]).deliver
+    ActionMailer::Base.mail(:from => "postmaster@kokosurance.com", :to => "rcarter@kokosurance.com", :subject => "Quote request for #{params[:first]} #{params[:last]}", :body => "Name: " + params[:first] + " " + params[:last] + "\nEmail: " + params[:email] + "\nPhone: " + params[:phone] + "\nAddress: " + params[:addr1] + "\nCity, State, Zip: " + params[:city] + ", " + params[:state] + " " + params[:zip] + "\nProducts: " + params[:products] + "\nMessage: " + params[:message]).deliver
     flash[:notice] = "Message successfully delivered"
     redirect_to :root
   end

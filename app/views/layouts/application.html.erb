@@ -3,8 +3,12 @@
 <head>
   <% if !yield(:title).empty? %>
     <title><%= yield(:title) %></title>
+    <meta property="og:title" content="<% yield(:title) %>">
   <% else %>
     <title>Kokopelli Insurance | Southern Utah | Life Insurance | Health Insurance</title>
+  <% end %>
+  <% if !yield(:description).empty? %>
+    <meta property="og:description" content="<% yield(:description) %>">
   <% end %>
   <meta charset="UTF-8" />
 
