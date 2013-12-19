@@ -20,6 +20,7 @@ Family::Application.routes.draw do
   get "static/newsletter"
 
   match "static/contact" => "static#submit_contact", :via => :post
+  match "static/quote" => "static#submit_quote", :via => :post
 
   get "articles/delete_image"
   get "articles/delete_promo"
