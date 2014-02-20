@@ -40,9 +40,9 @@
 	    </div>
 
 	    <h3>I am interested in the following products:</h3>
-	    <div class="row"><div class="span3"><%= check_box_tag(:products, "Life Insurance") %> Life Insurance </div><div class="span3"><%= check_box_tag(:products, "Health Insurance") %> Health Insurance </div><div class="span3"><%= check_box_tag(:products, "Annuities") %> Annuities </div></div>
-	    <div class="row"><div class="span3"><%= check_box_tag(:products, "Retirement") %> Retirement </div><div class="span3"><%= check_box_tag(:products, "Medicare Supplement") %> Medicare Supplement </div><div class="span3"><%= check_box_tag(:products, "Disability Insurance") %> Disability Insurance </div></div>
-	    <div class="row"><div class="span3"><%= check_box_tag(:products, "Long-term Care") %> Long-term Care </div></div>
+	    <div class="row"><div class="span3"><%= check_box_tag("products[]", "Life Insurance") %> Life Insurance </div><div class="span3"><%= check_box_tag("products[]", "Health Insurance") %> Health Insurance </div><div class="span3"><%= check_box_tag("products[]", "Annuities") %> Annuities </div></div>
+	    <div class="row"><div class="span3"><%= check_box_tag("products[]", "Retirement") %> Retirement </div><div class="span3"><%= check_box_tag("products[]", "Medicare Supplement") %> Medicare Supplement </div><div class="span3"><%= check_box_tag("products[]", "Disability Insurance") %> Disability Insurance </div></div>
+	    <div class="row"><div class="span3"><%= check_box_tag("products[]", "Long-term Care") %> Long-term Care </div><div class="span3"><%= check_box_tag("products[]", "Auto Insurance") %> Auto Insurance </div><div class="span3"><%= check_box_tag("products[]", "Home Insurance") %> Home Insurance </div></div>
 
 	    <h3>Other comments</h3>
 	    <p><%= text_area_tag(:message, "", size: "5x10", class: "span11 aform", placeholder: "enter your message here...") %></p>
