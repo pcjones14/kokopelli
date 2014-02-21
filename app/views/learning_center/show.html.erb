@@ -4,6 +4,9 @@
 
 <% content_for :title, @article.title %>
 <% content_for :description, @article.body %>
+<% if !@article.image_file_name.nil? %>
+    <% content_for :image_url, asset_url(@article.image_file_name) %>
+<% end %>
 
 <div class="main">
   <div class="article">

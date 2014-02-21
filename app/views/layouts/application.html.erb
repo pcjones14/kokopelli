@@ -10,6 +10,9 @@
   <% if !yield(:description).empty? %>
     <meta property="og:description" content="<% yield(:description) %>">
   <% end %>
+  <% if !yield(:image_url).empty? %>
+    <meta property="og:image" content="<%= yield(:image_url) %>"/>
+  <% end %>
   <meta charset="UTF-8" />
 
   <%= favicon_link_tag 'favicon.ico' %>
