@@ -91,13 +91,11 @@
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Insurance Products <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><%= link_to('Life Insurance') %></li>
-          <li><%= link_to('Health Insurance') %></li>
-          <li><%= link_to('Annuities') %></li>
-          <li><%= link_to('Retirement') %></li>
-          <li><%= link_to('Medicare') %></li>
-          <li><%= link_to('Disability Insurance') %></li>
-          <li><%= link_to('Long Term Care') %></li>
+          <li><%= link_to('Auto Insurance', static_coming_soon_path) %></li>
+          <li><%= link_to('Home Insurance', static_coming_soon_path) %></li>
+          <li><%= link_to('Business Insurance', static_coming_soon_path) %></li>
+          <li><%= link_to('Life Insurance', static_coming_soon_path) %></li>
+          <li><%= link_to('Health Insurance', static_coming_soon_path) %></li>
         </ul>
       </li>
       <li class="dropdown <%= 'class="active"' if flash[:page] == "about"%>"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Learning Center <b class="caret"></b></a>
@@ -137,22 +135,24 @@
     <%= yield %>
 
     <br/>
-    <div class="row">
-    <div class="span12">
-      <div class="social-bar" style="margin-left: -20px; width: 930px">
-        <div class="float-left">
-          <p>Call us! &rarr; 855-KOKO-NOW (855-565-6669)</p>
-        </div>
-        <div class="align-right">
-          <%= link_to(image_tag('facebook.png', width: 30), "http://facebook.com/KokopelliInsurance", target: "_new") %>
-          <%= link_to(image_tag('twitter.png', width: 30), "http://twitter.com/kokosurance", target: "_new") %>
-          <%= link_to(image_tag('linkedin.png', width: 30), "http://linkedin.com/company/kokopelli-insurance", target: "_new") %>
-          <%= link_to(image_tag('youtube.png', width: 30), "http://youtube.com/user/kokosurance", target: "_new") %>
+    <!-- <div class="row">
+      <div class="span12">
+        <div class="social-bar" style="margin-left: -20px; width: 930px">
+          <div class="float-left">
+            <p>Call us! &rarr; 855-KOKO-NOW (855-565-6669)</p>
+          </div>
+          <div class="align-right">
+            <%= link_to(image_tag('facebook.png', width: 30), "http://facebook.com/KokopelliInsurance", target: "_new") %>
+            <%= link_to(image_tag('twitter.png', width: 30), "http://twitter.com/kokosurance", target: "_new") %>
+            <%= link_to(image_tag('linkedin.png', width: 30), "http://linkedin.com/company/kokopelli-insurance", target: "_new") %>
+            <%= link_to(image_tag('youtube.png', width: 30), "http://youtube.com/user/kokosurance", target: "_new") %>
+          </div>
         </div>
       </div>
-    </div>
-    <br/>
-  </div>
+      <br/>
+    </div> -->
+
+    <hr/>
 
     <div class="row-fluid footer">
 

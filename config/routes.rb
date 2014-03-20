@@ -18,6 +18,7 @@ Family::Application.routes.draw do
   get "static/legal"
   get "static/quote"
   get "static/newsletter"
+  get "static/coming_soon"
 
   match "static/contact" => "static#submit_contact", :via => :post
   match "static/quote" => "static#submit_quote", :via => :post

@@ -64,4 +64,7 @@ class StaticController < ApplicationController
   def newsletter
   end
 
+  def coming_soon
+  end
+
 end
